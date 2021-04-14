@@ -37,3 +37,4 @@ export const ALogo = styled(A)`
 	text-transform: uppercase;
 	letter-spacing: 5px;
 `
+//Mobile

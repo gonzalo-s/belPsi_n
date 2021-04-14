@@ -5,5 +5,5 @@ export const UiKitDefaults = {
 	buttons: {
 		backgroundColor: '#846877',
 	},
-	backgroundColor: '#846877',
+	backgroundColor: '#5d4954',
 }
