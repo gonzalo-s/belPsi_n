@@ -5,6 +5,7 @@ import { useMediaQuery } from 'react-responsive'
 import { loadGetInitialProps } from 'next/dist/next-server/lib/utils'
 import Loading from '../components/Loading'
 import axios from 'axios'
+import { Button, Input, Textarea } from './ui/uiKit'
 
 function ContactForm() {
 	const { register, handleSubmit, errors } = useForm()
@@ -85,7 +86,7 @@ function ContactForm() {
 					</span>
 				</label>
 
-				<input
+				<Input
 					name="name"
 					placeholder="Nombre"
 					ref={register({
@@ -95,7 +96,7 @@ function ContactForm() {
 							message: 'Ingresar al menos 3 caracteres',
 						},
 					})}
-				></input>
+				></Input>
 
 				<label>
 					Email:&nbsp;
@@ -103,7 +104,7 @@ function ContactForm() {
 						{errors?.replyTo?.message}
 					</span>
 				</label>
-				<input
+				<Input
 					name="replyTo"
 					placeholder="Email"
 					ref={register({
@@ -113,7 +114,7 @@ function ContactForm() {
 							message: 'Ingresar Email válido',
 						},
 					})}
-				></input>
+				></Input>
 
 				<label>
 					Teléfono:&nbsp;
@@ -121,7 +122,7 @@ function ContactForm() {
 						{errors?.phone?.message}
 					</span>
 				</label>
-				<input
+				<Input
 					name="phone"
 					placeholder="011 2222 3333"
 					ref={register({
@@ -130,7 +131,7 @@ function ContactForm() {
 							message: 'Ingresar Nro de telefono válido',
 						},
 					})}
-				></input>
+				></Input>
 
 				<label>
 					Consulta:&nbsp;
@@ -138,7 +139,8 @@ function ContactForm() {
 						{errors?.consulta?.message}
 					</span>
 				</label>
-				<textarea
+				<Textarea
+					minHeight={'100px'}
 					name="consulta"
 					ref={register({
 						required: { value: true, message: 'Ingresar consulta' },
@@ -147,15 +149,16 @@ function ContactForm() {
 							message: 'Ingresar al menos 10 caracteres',
 						},
 					})}
-				></textarea>
+				></Textarea>
 
-				<input
+				{/* <input
 					className={
 						isDesktop ? styles.submitBtn : styles.mobileSubmitBtn
 					}
 					type="submit"
 					value="Enviar"
-				/>
+				/> */}
+				<Button type="submit">Enviar</Button>
 			</form>
 		</div>
 	)

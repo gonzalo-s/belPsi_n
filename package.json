@@ -1,23 +1,27 @@
 {
-  "name": "bel-psi-n",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "@sendgrid/mail": "^7.4.2",
-    "axios": "^0.21.1",
-    "dotenv": "^8.2.0",
-    "next": "10.0.4",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "react-hook-form": "^6.14.1",
-    "react-responsive": "^8.2.0"
-  },
-  "devDependencies": {
-    "dotenv-webpack": "^6.0.0"
-  }
+	"name": "bel-psi-n",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start"
+	},
+	"dependencies": {
+		"@sendgrid/mail": "^7.4.2",
+		"axios": "^0.21.1",
+		"dotenv": "^8.2.0",
+		"next": "10.0.4",
+		"react": "17.0.1",
+		"react-dom": "17.0.1",
+		"react-hook-form": "^6.14.1",
+		"react-responsive": "^8.2.0",
+		"styled-components": "^5.2.3"
+	},
+	"devDependencies": {
+		"dotenv-webpack": "^6.0.0"
+	},
+	"resolutions": {
+		"styled-components": "^5"
+	}
 }

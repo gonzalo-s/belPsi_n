@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
-import styles from '../styles/Home.module.css'
 import MovileMenu from '../components/movileMenu'
 import LinksDb from './LinksDb'
 import { useMediaQuery } from 'react-responsive'
+import { Ul, Li, A, ALogo, NavbarWrapper } from '../components/ui/uiMenuBtns'
 
 function Navbar() {
 	let isDesktop = useMediaQuery({
@@ -11,28 +11,26 @@ function Navbar() {
 	})
 
 	return (
-		<div className={styles.navbar}>
+		<NavbarWrapper>
 			<Link href={'/'}>
-				<a className={styles.navbarLogoAnchor}>
-					<div className={styles.navbarLogo}>Lic MBS</div>
-				</a>
+				<ALogo>Lic MBS</ALogo>
 			</Link>
 			{isDesktop ? (
-				<ul className={styles.navbarUl}>
+				<Ul>
 					{LinksDb.menu.map((item, i) => {
 						return (
-							<li key={i}>
+							<Li key={i}>
 								<Link href={item.link}>
-									<a>{item.text}</a>
+									<A>{item.text}</A>
 								</Link>
-							</li>
+							</Li>
 						)
 					})}
-				</ul>
+				</Ul>
 			) : (
 				<MovileMenu />
 			)}
-		</div>
+		</NavbarWrapper>
 	)
 }
 export default Navbar
