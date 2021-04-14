@@ -2,10 +2,17 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import styles from '../styles/ContactForm.module.css'
 import { useMediaQuery } from 'react-responsive'
-import { loadGetInitialProps } from 'next/dist/next-server/lib/utils'
 import Loading from '../components/Loading'
 import axios from 'axios'
-import { Button, Input, Textarea } from './ui/uiKit'
+import {
+	Button,
+	Input,
+	Textarea,
+	FormWrapper,
+	Form,
+	Label,
+	ErrorLabel,
+} from './ui/uiForm'
 
 function ContactForm() {
 	const { register, handleSubmit, errors } = useForm()
@@ -71,20 +78,13 @@ function ContactForm() {
 	//const data = { username: 'example' };
 
 	return (
-		<div className={styles.formWrapper}>
+		<FormWrapper>
 			<div>{isLoading ? <Loading /> : ''}</div>
-			<form
-				className={
-					isDesktop ? styles.contactForm : styles.mobileContactForm
-				}
-				onSubmit={handleSubmit(onSubmit)}
-			>
-				<label>
+			<Form onSubmit={handleSubmit(onSubmit)}>
+				<Label>
 					Nombre:&nbsp;
-					<span className={styles.error}>
-						{errors?.name?.message}
-					</span>
-				</label>
+					<ErrorLabel>{errors?.name?.message}</ErrorLabel>
+				</Label>
 
 				<Input
 					name="name"
@@ -98,12 +98,10 @@ function ContactForm() {
 					})}
 				></Input>
 
-				<label>
+				<Label>
 					Email:&nbsp;
-					<span className={styles.error}>
-						{errors?.replyTo?.message}
-					</span>
-				</label>
+					<ErrorLabel>{errors?.replyTo?.message}</ErrorLabel>
+				</Label>
 				<Input
 					name="replyTo"
 					placeholder="Email"
@@ -116,12 +114,10 @@ function ContactForm() {
 					})}
 				></Input>
 
-				<label>
+				<Label>
 					Teléfono:&nbsp;
-					<span className={styles.error}>
-						{errors?.phone?.message}
-					</span>
-				</label>
+					<ErrorLabel>{errors?.phone?.message}</ErrorLabel>
+				</Label>
 				<Input
 					name="phone"
 					placeholder="011 2222 3333"
@@ -133,12 +129,10 @@ function ContactForm() {
 					})}
 				></Input>
 
-				<label>
+				<Label>
 					Consulta:&nbsp;
-					<span className={styles.error}>
-						{errors?.consulta?.message}
-					</span>
-				</label>
+					<ErrorLabel>{errors?.consulta?.message}</ErrorLabel>
+				</Label>
 				<Textarea
 					minHeight={'100px'}
 					name="consulta"
@@ -151,16 +145,9 @@ function ContactForm() {
 					})}
 				></Textarea>
 
-				{/* <input
-					className={
-						isDesktop ? styles.submitBtn : styles.mobileSubmitBtn
-					}
-					type="submit"
-					value="Enviar"
-				/> */}
 				<Button type="submit">Enviar</Button>
-			</form>
-		</div>
+			</Form>
+		</FormWrapper>
 	)
 }
 export default ContactForm
