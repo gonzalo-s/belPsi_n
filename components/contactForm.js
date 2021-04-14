@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import styles from '../styles/ContactForm.module.css'
 import { useMediaQuery } from 'react-responsive'
 import Loading from '../components/Loading'
 import axios from 'axios'
