@@ -38,49 +38,6 @@
 	width: 50%;
 	padding: 5%;
 }
-.navbar {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	min-height: 8vh;
-	background: #5d4954;
-	height: 30px;
-}
-
-.navbarUl {
-	display: flex;
-	list-style: none;
-	justify-content: space-around;
-	width: 30%;
-	white-space: nowrap;
-	margin-right: 150px;
-}
-
-.navbar li {
-	border-left: 1px solid #846877;
-	border-spacing: 0px 5px;
-	margin-right: 15px;
-}
-
-.navbar li a {
-	color: white;
-	text-decoration: none;
-}
-.navbar li a:hover {
-	color: #dedadc;
-}
-
-.navbarLogoAnchor {
-	color: white;
-	text-decoration: none;
-	margin-left: 15vw;
-}
-.navbarLogo {
-	color: white;
-	text-transform: uppercase;
-	letter-spacing: 5px;
-}
 
 .chatContact {
 	position: fixed;
