@@ -1,24 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 //import MovileMenu from '../components/movileMenu'
 import LinksDb from './LinksDb'
-import { useMediaQuery } from 'react-responsive'
 import { Ul, Li, A, ALogo, NavbarWrapper } from '../components/ui/uiMenuBtns'
 import HamMenu from '../components/HamMenu'
 
 function Navbar() {
-	// let isDesktop = useMediaQuery({
-	// 	query: '(min-width: 920px)',
-	// })
+	const [displayMenu, setDisplayMenu] = useState(false)
+	function handleMenuClick() {
+		setDisplayMenu(!displayMenu)
+	}
 
 	return (
-		<NavbarWrapper>
-			<HamMenu />
+		<NavbarWrapper displayMenu={displayMenu}>
+			<HamMenu
+				displayMenu={displayMenu}
+				handleMenuClick={handleMenuClick}
+			/>
 			<Link href={'/'}>
 				<ALogo>Lic MBS</ALogo>
 			</Link>
 
-			<Ul>
+			<Ul displayMenu={displayMenu}>
 				{LinksDb.menu.map((item, i) => {
 					return (
 						<Li key={i}>

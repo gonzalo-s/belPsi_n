@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
 	Hamburguer,
 	HamHLine12,
@@ -7,22 +7,16 @@ import {
 	HamXLine2,
 } from '../components/ui/uiHamburguer'
 
-function HamMenu() {
-	const [menuState, setMenuState] = useState(false)
-
-	function menuClick() {
-		setMenuState(!menuState)
-		console.log(menuState)
-	}
+function HamMenu({ displayMenu, handleMenuClick }) {
 	return (
-		<Hamburguer menuState={menuState} onClick={menuClick}>
-			{menuState ? (
-				<div className="hamX">
+		<Hamburguer onClick={handleMenuClick}>
+			{displayMenu ? (
+				<div>
 					<HamXLine1 />
 					<HamXLine2 />
 				</div>
 			) : (
-				<div className="hamLines">
+				<div>
 					<HamHLine12 />
 					<HamHLine12 />
 					<HamHLine3 />
