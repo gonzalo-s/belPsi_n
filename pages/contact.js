@@ -1,27 +1,30 @@
-import styles from '../styles/Home.module.css'
 import Head from 'next/head'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import ContactForm from '../components/contactForm'
-import ChatContact from '../components/chatContact'
+import {
+	Container,
+	PageContainer,
+	PageContentWrap,
+	Main,
+} from '../components/ui/uiKit'
 
-export default function About() {
+export default function Contact() {
 	return (
-		<div className={styles.container}>
+		<Container>
 			<Head>
 				<title>Lic M.B.S</title>
 				<link rel="icon" href="/32px-Psi2.svg.png" />
 			</Head>
-			<div className={styles.pageContainer}>
-				<div className={styles.pageContentWrap}>
+			<PageContainer>
+				<PageContentWrap>
 					<Navbar />
-					<main className={styles.main}>
+					<Main>
 						<ContactForm />
-					</main>
-					<ChatContact />
-				</div>
+					</Main>
+				</PageContentWrap>
 				<Footer />
-			</div>
-		</div>
+			</PageContainer>
+		</Container>
 	)
 }

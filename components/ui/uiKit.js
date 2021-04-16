@@ -1,5 +1,9 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
+const desktopStartWidth = '996px'
+//const desktop = `@media (min-width: ${desktopStartWidth})`
+const mobile = `@media (max-width: ${desktopStartWidth})`
+
 export const GlobalStyle = createGlobalStyle`
 body{
 	padding: 0;
@@ -9,6 +13,53 @@ body{
 	line-height: 1.6;
 	font-size: 18px;
 	min-height: 100%;
-}
+}`
 
+export const Container = styled.div``
+export const PageContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+`
+
+export const Main = styled.div``
+
+export const PageContentWrap = styled.div`
+	flex: 1;
+`
+
+export const QuoteWithImg = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+`
+export const QuoteWrapper = styled.div`
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	max-width: 70vw;
+	width: 1000px;
+	padding: 10px;
+	margin: 10vw;
+	border: 2px solid #846877;
+	${mobile} {
+		flex-direction: column;
+	}
+`
+
+export const QuoteImg = styled.img`
+	width: 30%;
+	margin: 5px;
+	${mobile} {
+		width: 70%;
+	}
+`
+export const QuoteP = styled.p`
+	width: 50%;
+	padding: 5%;
+	${mobile} {
+		width: 70%;
+	}
 `

@@ -6,6 +6,12 @@ const LinksDb = {
 		{ link: '/online', text: 'Terapia OnLine' },
 		{ link: '/contact', text: 'Contacto' },
 	],
+
+	footerExtra: [
+		{ link: '/about', text: 'Lic. Maria Belen Sica' },
+		{ link: '/contact', text: 'belensica@gmail.com' },
+	],
+
 	extra: {
 		name: 'Lic. Maria Belen Sica',
 		email: 'belensica@gmail.com',
