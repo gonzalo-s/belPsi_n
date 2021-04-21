@@ -11,12 +11,15 @@ export const FooterWrapper = styled.footer`
 	width: 100%;
 	background-color: ${UiKitDefaults.backgroundColor};
 	align-items: center;
+	${mobile} {
+	}
 `
 export const FooterTop = styled.div`
 	display: flex;
 	flex-direction: row;
 	width: 100%;
 	justify-content: center;
+	margin: 0 50%;
 `
 
 export const UlMenu = styled.ul`
@@ -25,7 +28,7 @@ export const UlMenu = styled.ul`
 	justify-content: space-evenly;
 	white-space: nowrap;
 	flex-direction: column;
-	min-height: 200px;
+	max-height: 200px;
 	width: 50%;
 	align-items: start;
 	margin-left: 20%;
@@ -40,12 +43,15 @@ export const UlExtra = styled.ul`
 	white-space: nowrap;
 	flex-direction: column;
 	background-color: ${UiKitDefaults.backgroundColor};
-	min-height: 200px;
+	max-height: 200px;
 	width: 50%;
 	align-items: start;
 	${mobile} {
 		width: 100%;
-		align-items: center;
+		align-items: left;
+		height: 100px;
+		margin: 0 50%;
+		padding: 0;
 	}
 `
 export const Li = styled.li`
@@ -66,10 +72,13 @@ export const FooterBottom = styled.div`
 	color: white;
 `
 export const Whastapp = styled.a`
-	position: absolute;
+	position: fixed;
 	bottom: 15vh;
 	right: 15px;
 	cursor: pointer;
 	color: white;
 	text-decoration: none;
+	${mobile} {
+		bottom: 10vh;
+	}
 `
