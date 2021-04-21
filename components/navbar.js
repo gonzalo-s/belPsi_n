@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-//import MovileMenu from '../components/movileMenu'
 import LinksDb from './LinksDb'
 import { Ul, Li, A, ALogo, NavbarWrapper } from '../components/ui/uiMenuBtns'
 import HamMenu from '../components/HamMenu'
