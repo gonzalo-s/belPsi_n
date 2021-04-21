@@ -18,12 +18,13 @@ export const Hamburguer = styled.button`
 		align-items: center;
 		justify-content: center;
 		justify-items: center;
-		top: 0%;
+		//top: 0%;
+		right: 0%;
 		width: 30px;
 		height: 30px;
 		border-width: 0;
-		margin-top: 10px;
-		margin-right: 10px;
+		margin: 10px;
+		//right: 0;
 		padding: 17px;
 		background-color: ${UiKitDefaults.backgroundColor};
 		//background-color: red;

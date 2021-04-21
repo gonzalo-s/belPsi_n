@@ -60,6 +60,9 @@ export const ALogo = styled(A)`
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	${Mobile} {
-		display: none;
+		position: absolute;
+		left: 0;
+		top: 14px;
+		//display: none;
 	}
 `
