@@ -12,13 +12,7 @@ import {
 	QuoteWrapper,
 } from '../components/ui/uiKit'
 
-//import { useMediaQuery } from 'react-responsive'
-
 export default function Home() {
-	// let isDesktop = useMediaQuery({
-	// 	query: '(min-width: 920px)',
-	// })
-
 	return (
 		<Container>
 			<Head>
