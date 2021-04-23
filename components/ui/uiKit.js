@@ -1,8 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
-
-const desktopStartWidth = '996px'
-//const desktop = `@media (min-width: ${desktopStartWidth})`
-const mobile = `@media (max-width: ${desktopStartWidth})`
+import { UiKitDefaults } from '../ui/uiDefaults'
 
 export const GlobalStyle = createGlobalStyle`
 body{
@@ -13,9 +10,11 @@ body{
 	line-height: 1.6;
 	font-size: 18px;
 	min-height: 100%;
-}`
+}
+`
 
 export const Container = styled.div``
+
 export const PageContainer = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -44,7 +43,7 @@ export const QuoteWrapper = styled.div`
 	padding: 10px;
 	margin: 10vw;
 	border: 2px solid #846877;
-	${mobile} {
+	${UiKitDefaults.mobile} {
 		flex-direction: column;
 	}
 `
@@ -52,14 +51,14 @@ export const QuoteWrapper = styled.div`
 export const QuoteImg = styled.img`
 	width: 30%;
 	margin: 5px;
-	${mobile} {
+	${UiKitDefaults.mobile} {
 		width: 70%;
 	}
 `
 export const QuoteP = styled.p`
 	width: 50%;
 	padding: 5%;
-	${mobile} {
+	${UiKitDefaults.mobile} {
 		width: 70%;
 	}
 `

@@ -1,17 +1,13 @@
 import styled from 'styled-components'
 import { UiKitDefaults } from '../ui/uiDefaults'
 
-const desktopStartWidth = '996px'
-//const desktop = `@media (min-width: ${desktopStartWidth})`
-const mobile = `@media (max-width: ${desktopStartWidth})`
-
 export const FooterWrapper = styled.footer`
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	background-color: ${UiKitDefaults.backgroundColor};
 	align-items: center;
-	${mobile} {
+	${UiKitDefaults.mobile} {
 	}
 `
 export const FooterTop = styled.div`
@@ -32,7 +28,7 @@ export const UlMenu = styled.ul`
 	width: 50%;
 	align-items: start;
 	margin-left: 20%;
-	${mobile} {
+	${UiKitDefaults.mobile} {
 		display: none;
 	}
 `
@@ -46,7 +42,7 @@ export const UlExtra = styled.ul`
 	max-height: 200px;
 	width: 50%;
 	align-items: start;
-	${mobile} {
+	${UiKitDefaults.mobile} {
 		width: 100%;
 		align-items: left;
 		height: 100px;
@@ -78,7 +74,7 @@ export const Whastapp = styled.a`
 	cursor: pointer;
 	color: white;
 	text-decoration: none;
-	${mobile} {
+	${UiKitDefaults.mobile} {
 		bottom: 10vh;
 	}
 `

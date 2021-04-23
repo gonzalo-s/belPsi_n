@@ -3,6 +3,7 @@ import Link from 'next/link'
 import LinksDb from './LinksDb'
 import { Ul, Li, A, ALogo, NavbarWrapper } from '../components/ui/uiMenuBtns'
 import HamMenu from '../components/HamMenu'
+import { UiKitDefaults } from '../components/ui/uiDefaults'
 
 function Navbar() {
 	const [displayMenu, setDisplayMenu] = useState(false)
@@ -11,12 +12,13 @@ function Navbar() {
 	}
 
 	return (
-		<NavbarWrapper displayMenu={displayMenu}>
+		<NavbarWrapper>
 			<HamMenu
 				displayMenu={displayMenu}
 				handleMenuClick={handleMenuClick}
 			/>
-			<Link href={'/'}>
+
+			<Link className="logoLink" href={LinksDb.menu[0].link}>
 				<ALogo>Lic MBS</ALogo>
 			</Link>
 

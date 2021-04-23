@@ -1,15 +1,11 @@
 import styled from 'styled-components'
 import { UiKitDefaults } from '../ui/uiDefaults'
 
-const desktopStartWidth = '996px'
-//const Desktop = `@media (min-width: ${desktopStartWidth})`
-const Mobile = `@media (max-width: ${desktopStartWidth})`
-
 export const Hamburguer = styled.button`
 	//no mostrar nada si es Desktop
 	display: none;
 	//si es Mobile mostrar ham
-	${Mobile} {
+	${UiKitDefaults.mobile} {
 		//position: relative;
 		//margin-right: 25px;
 		display: flex;
@@ -38,7 +34,7 @@ export const HamHLine12 = styled.line`
 	//no mostrar nada si es Desktop
 	display: none;
 	//si es Mobile mostrar
-	${Mobile} {
+	${UiKitDefaults.mobile} {
 		display: block;
 		width: 30px;
 		height: 3px;
@@ -50,7 +46,7 @@ export const HamHLine3 = styled(HamHLine12)`
 	//no mostrar nada si es Desktop
 	display: none;
 	//si es Mobile mostrar
-	${Mobile} {
+	${UiKitDefaults.mobile} {
 		display: block;
 		margin-bottom: 0;
 	}
@@ -60,7 +56,7 @@ export const HamXLine1 = styled(HamHLine12)`
 	//no mostrar nada si es Desktop
 	display: none;
 	//si es Mobile mostrar
-	${Mobile} {
+	${UiKitDefaults.mobile} {
 		display: block;
 		transform: rotate(45deg);
 	}
@@ -70,7 +66,7 @@ export const HamXLine2 = styled(HamXLine1)`
 	//no mostrar nada si es Desktop
 	display: none;
 	//si es Mobile mostrar
-	${Mobile} {
+	${UiKitDefaults.mobile} {
 		display: block;
 		transform: rotate(-45deg);
 	}

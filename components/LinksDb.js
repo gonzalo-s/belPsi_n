@@ -1,15 +1,15 @@
 const LinksDb = {
 	menu: [
-		{ link: '/', text: 'Inicio' },
-		{ link: '/about', text: 'Quien Soy' },
-		{ link: '/services', text: 'Tratamientos' },
-		{ link: '/online', text: 'Terapia OnLine' },
-		{ link: '/contact', text: 'Contacto' },
+		{ link: '/home', text: 'Inicio' },
+		{ link: '/quienSoy', text: 'Quien Soy' },
+		{ link: '/tratamientos', text: 'Tratamientos' },
+		{ link: '/terapiaOnLine', text: 'Terapia OnLine' },
+		{ link: '/contacto', text: 'Contacto' },
 	],
 
 	footerExtra: [
-		{ link: '/about', text: 'Lic. Maria Belen Sica' },
-		{ link: '/contact', text: 'belensica@gmail.com' },
+		{ link: '/quienSoy', text: 'Lic. Maria Belen Sica' },
+		{ link: '/contacto', text: 'belensica@gmail.com' },
 	],
 
 	extra: {

@@ -32,6 +32,7 @@ export const Ul = styled.ul`
 	width: 30%;
 	white-space: nowrap;
 	margin-right: 150px;
+
 	${Mobile} {
 		flex-direction: column;
 		margin: 0;

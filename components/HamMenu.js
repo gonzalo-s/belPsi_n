@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
 	Hamburguer,
 	HamHLine12,
@@ -8,6 +8,8 @@ import {
 } from '../components/ui/uiHamburguer'
 
 function HamMenu({ displayMenu, handleMenuClick }) {
+	const [hamDisplay, setHamDisplay] = useState(false)
+
 	return (
 		<Hamburguer onClick={handleMenuClick}>
 			{displayMenu ? (
