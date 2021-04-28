@@ -36,7 +36,7 @@ export default function Online() {
 								alt="computadora y cafe"
 							/>
 						</ImgWrappOnLine>
-						<ContentWrapperOnLine className="aboutMe">
+						<ContentWrapperOnLine className="OnLineWrapper">
 							<div className="TextWrapper">
 								<p className="firstP">
 									La terapia online es fundamentalmente

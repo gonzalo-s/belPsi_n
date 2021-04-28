@@ -61,13 +61,14 @@ export const QuoteP = styled.p`
 	width: 50%;
 	padding: 5%;
 	color: ${UiKitDefaults.textColor};
+
 	&::first-letter {
-		//font-weight: bold;
-		padding-top: 0.6rem;
-		padding-right: 0.5rem;
+		color: ${UiKitDefaults.highLightedText};
 		font-size: 3.5rem;
 		float: left;
-		color: ${UiKitDefaults.highLightedText};
+		padding-right: 0.7rem;
+		line-height: 70%;
+		margin-top: 0.8rem;
 	}
 	${UiKitDefaults.mobile} {
 		width: 70%;
@@ -79,14 +80,15 @@ export const ContentWrapper = styled.div`
 	.TextWrapper {
 		display: flex;
 		flex-direction: column;
-
 		color: ${UiKitDefaults.textColor};
+
 		.firstP::first-letter {
-			font-weight: normal;
-			padding-top: 0.5rem;
+			color: ${UiKitDefaults.highLightedText};
 			font-size: 3.5rem;
 			float: left;
-			color: ${UiKitDefaults.highLightedText};
+			padding-right: 0.5rem;
+			line-height: 70%;
+			margin-top: 0.7rem;
 		}
 	}
 	${UiKitDefaults.mobile} {
@@ -133,25 +135,23 @@ export const ImgWrappOnLine = styled(ImgWrapp)`
 		margin: 0% 5%;
 	}
 `
-export const ContentWrapperOnLine = styled(ContentWrapper)`
+export const ContentWrapperOnLine = styled.div`
+	display: flex;
 	margin: 0% 25%;
-	max-width: 640px;
 	.TextWrapper {
 		display: flex;
 		flex-direction: column;
-
 		color: ${UiKitDefaults.textColor};
 		.firstP::first-letter {
-			font-weight: normal;
-			padding-top: 0.6rem;
+			color: ${UiKitDefaults.highLightedText};
 			font-size: 3.5rem;
 			float: left;
-			color: ${UiKitDefaults.highLightedText};
+			padding-right: 0.5rem;
+			line-height: 70%;
+			margin-top: 0.8rem;
 		}
 	}
-
 	${UiKitDefaults.mobile} {
-		max-width: 70%;
 		margin: 0% 5%;
 	}
 `
