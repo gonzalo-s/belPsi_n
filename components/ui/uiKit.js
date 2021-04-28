@@ -67,7 +67,7 @@ export const QuoteP = styled.p`
 		font-size: 3.5rem;
 		float: left;
 		padding-right: 0.7rem;
-		line-height: 70%;
+		line-height: 60%;
 		margin-top: 0.8rem;
 	}
 	${UiKitDefaults.mobile} {
