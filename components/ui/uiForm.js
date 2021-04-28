@@ -16,14 +16,13 @@ export const Form = styled.form`
 	height: 100%;
 	justify-content: center;
 	margin-top: 5%;
-	background: #5d4954;
+	background: ${UiKitDefaults.backgroundColor};
 	padding: 1%;
-	color: white;
 `
 export const Label = styled.label`
 	display: flex;
 	flex-direction: row;
-	color: white;
+	color: ${UiKitDefaults.textColorLight};
 `
 
 export const ErrorLabel = styled.label`
@@ -39,7 +38,7 @@ export const Button = styled.button`
 	cursor: pointer;
 	background-color: ${UiKitDefaults.buttons.backgroundColor};
 	border: none;
-	color: white;
+	color: ${UiKitDefaults.textColorLight};
 	font-size: 18px;
 
 	&:hover {

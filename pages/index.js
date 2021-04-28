@@ -30,10 +30,10 @@ export default function Home() {
 									alt="Calma"
 								/>
 								<QuoteP as="i">
-									"Todo puede serle arrebatado a un hombre,
+									Todo puede serle arrebatado a un hombre,
 									menos la última de las libertades humanas:
 									el elegir su actitud en una serie de
-									circunstancias." Viktor Frankl
+									circunstancias. Viktor Frankl
 								</QuoteP>
 							</QuoteWrapper>
 						</QuoteWithImg>

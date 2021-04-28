@@ -10,7 +10,7 @@ export const NavbarWrapper = styled.nav`
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	background: #5d4954;
+	background: ${UiKitDefaults.backgroundColor};
 	height: 60px;
 	${Mobile} {
 		display: flex;
@@ -44,14 +44,16 @@ export const Ul = styled.ul`
 	}
 `
 export const Li = styled.li`
-	border-left: 1px solid #846877;
+	border-left: 1px solid ${UiKitDefaults.buttons.backgroundColor};
 	border-spacing: 0px 5px;
 	margin-right: 15px;
+	padding-bottom: 10px;
 `
 export const A = styled.a`
 	cursor: pointer;
-	color: white;
 	text-decoration: none;
+
+	color: ${UiKitDefaults.textColorLight};
 	&:hover {
 		color: ${UiKitDefaults.hover.color};
 	}
@@ -60,6 +62,7 @@ export const ALogo = styled(A)`
 	margin-left: 15vw;
 	text-transform: uppercase;
 	letter-spacing: 5px;
+	color: ${UiKitDefaults.textColorLight};
 	${Mobile} {
 		position: absolute;
 		left: 0;

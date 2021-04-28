@@ -3,7 +3,6 @@ import Link from 'next/link'
 import LinksDb from './LinksDb'
 import { Ul, Li, A, ALogo, NavbarWrapper } from '../components/ui/uiMenuBtns'
 import HamMenu from '../components/HamMenu'
-import { UiKitDefaults } from '../components/ui/uiDefaults'
 
 function Navbar() {
 	const [displayMenu, setDisplayMenu] = useState(false)

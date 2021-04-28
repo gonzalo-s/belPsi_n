@@ -10,6 +10,7 @@ export const FooterWrapper = styled.footer`
 	${UiKitDefaults.mobile} {
 	}
 `
+
 export const FooterTop = styled.div`
 	display: flex;
 	flex-direction: row;
@@ -51,13 +52,12 @@ export const UlExtra = styled.ul`
 	}
 `
 export const Li = styled.li`
-	border-left: 1px solid #846877;
+	border-left: 1px solid ${UiKitDefaults.buttons.backgroundColor};
 	border-spacing: 0px 5px;
-	color: white;
 `
 export const A = styled.a`
 	cursor: pointer;
-	color: white;
+	color: ${UiKitDefaults.textColorLight};
 	text-decoration: none;
 	&:hover {
 		color: ${UiKitDefaults.hover.color};
@@ -65,14 +65,14 @@ export const A = styled.a`
 `
 
 export const FooterBottom = styled.div`
-	color: white;
+	color: ${UiKitDefaults.textColorLight};
 `
 export const Whastapp = styled.a`
 	position: fixed;
 	bottom: 15vh;
 	right: 15px;
 	cursor: pointer;
-	color: white;
+	color: ${UiKitDefaults.textColorLight};
 	text-decoration: none;
 	${UiKitDefaults.mobile} {
 		bottom: 10vh;

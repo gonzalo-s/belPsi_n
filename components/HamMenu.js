@@ -13,12 +13,12 @@ function HamMenu({ displayMenu, handleMenuClick }) {
 	return (
 		<Hamburguer onClick={handleMenuClick}>
 			{displayMenu ? (
-				<div>
+				<div className="xWrapper">
 					<HamXLine1 />
 					<HamXLine2 />
 				</div>
 			) : (
-				<div>
+				<div className="lineWrapper">
 					<HamHLine12 />
 					<HamHLine12 />
 					<HamHLine3 />

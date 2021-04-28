@@ -28,6 +28,11 @@ export const Hamburguer = styled.button`
 		&:focus {
 			outline-style: none;
 		}
+		.xWrapper {
+			display: flex;
+			margin-top: 5px;
+			width: 30px;
+		}
 	}
 `
 export const HamHLine12 = styled.line`
@@ -68,6 +73,7 @@ export const HamXLine2 = styled(HamXLine1)`
 	//si es Mobile mostrar
 	${UiKitDefaults.mobile} {
 		display: block;
+		position: absolute;
 		transform: rotate(-45deg);
 	}
 `
