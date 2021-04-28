@@ -7,6 +7,8 @@ import {
 	PageContentWrap,
 	Main,
 } from '../components/ui/uiKit'
+import { Title, H4, Ul, ContentWrapper, ImgWrapp } from '../components/ui/uiKit'
+import TratamientosData from '../components/TxtDb'
 
 export default function Services() {
 	return (
@@ -18,7 +20,26 @@ export default function Services() {
 			<PageContainer>
 				<PageContentWrap>
 					<Navbar />
-					<Main>Services</Main>
+					<Main>
+						<Title>Tratamientos</Title>
+						<ContentWrapper className="contentWapper">
+							<div className="TextWrapper">
+								<p className="firstP">
+									Tratamientos orientados a niños,
+									adolescentes y adultos.
+								</p>
+
+								<H4>¿Cuando consultar?</H4>
+								<Ul className="ul">
+									{TratamientosData.map((tratamiento, i) => {
+										return (
+											<li key={i}>{tratamiento.text}</li>
+										)
+									})}
+								</Ul>
+							</div>
+						</ContentWrapper>
+					</Main>
 				</PageContentWrap>
 				<Footer />
 			</PageContainer>
