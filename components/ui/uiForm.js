@@ -16,7 +16,7 @@ export const Form = styled.form`
 	height: 100%;
 	justify-content: center;
 	margin-top: 5%;
-	background: ${UiKitDefaults.backgroundColor};
+	background: ${UiKitDefaults.form.backgroundColor};
 	padding: 1%;
 `
 export const Label = styled.label`
@@ -36,14 +36,14 @@ export const Button = styled.button`
 	margin-left: 10%;
 	margin-top: 2%;
 	cursor: pointer;
-	background-color: ${UiKitDefaults.buttons.backgroundColor};
+	background-color: ${UiKitDefaults.form.buttonBackgroundColor};
 	border: none;
 	color: ${UiKitDefaults.textColorLight};
 	font-size: 18px;
 
 	&:hover {
-		background-color: #877180;
-		color: ${UiKitDefaults.hover.color};
+		background-color: ${UiKitDefaults.hover.color};
+		color: ${UiKitDefaults.textColor};
 	}
 `
 export const Input = styled.input`

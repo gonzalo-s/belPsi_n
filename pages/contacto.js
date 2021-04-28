@@ -13,7 +13,7 @@ export default function Contact() {
 	return (
 		<Container>
 			<Head>
-				<title>Lic M.B.S</title>
+				<title>LIC MBS</title>
 				<link rel="icon" href="/32px-Psi2.svg.png" />
 			</Head>
 			<PageContainer>

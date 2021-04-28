@@ -16,24 +16,29 @@ const mobile = `@media (max-width: ${desktopStartWidth})`
 
 // Color palette 2
 
-const color1 = '#202020' // Background
-const color2 = '#3f3f3f' // Dark Text && Btn Background
-const color3 = '#ffffff' // Light Text
-const color4 = '#ffdf6c' // Highlighted Text
-const color5 = '#707070' // Hover
+const color1 = '#202020' // Blackish  | Background
+const color2 = '#3f3f3f' // Dark Grey | Dark Text && Btn Background
+const color3 = '#ffffff' // White     | Light Text
+const color4 = '#ffdf6c' // Egg Yell  | Highlighted Text && Hover
+const color5 = '#707070' // Med Grey  |
 
 console.log(mobile)
 export const UiKitDefaults = {
+	mobile: mobile,
+	desktop: desktop,
 	hover: {
-		color: color5,
+		//color: color5, //Color palette 1
+		color: color4,
 	},
 	buttons: {
 		backgroundColor: color2,
 	},
 	backgroundColor: color1,
-	mobile: mobile,
-	desktop: desktop,
 	textColor: color2,
 	textColorLight: color3,
 	highLightedText: color4,
+	form: {
+		backgroundColor: color2,
+		buttonBackgroundColor: color5,
+	},
 }

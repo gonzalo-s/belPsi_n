@@ -62,7 +62,7 @@ export const ALogo = styled(A)`
 	margin-left: 15vw;
 	text-transform: uppercase;
 	letter-spacing: 5px;
-	color: ${UiKitDefaults.textColorLight};
+	color: ${UiKitDefaults.highLightedText};
 	${Mobile} {
 		position: absolute;
 		left: 0;
