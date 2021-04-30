@@ -16,7 +16,6 @@ import {
 function ContactForm() {
 	const { register, handleSubmit, errors } = useForm()
 	const [isLoading, setIsLoading] = useState(false)
-	console.log(isLoading)
 	//TODO: check ctrl+f5 sets style to mobile allways
 
 	let isDesktop = useMediaQuery({
@@ -24,12 +23,9 @@ function ContactForm() {
 	})
 
 	function onSubmit(data, e) {
-		console.log(data)
 		let newData = { ...data, message: data.consulta }
 		delete newData.consulta
-		console.log('newData', newData)
 		setIsLoading(true)
-		//console.log(isLoading)
 
 		axios
 			.post('http://localhost:3000/api/mail', JSON.stringify(newData))
@@ -50,7 +46,6 @@ function ContactForm() {
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				console.log('Success:', data)
 				// if no errors in data SHOW success message
 				if (data.msg != undefined) {
 					// show success page

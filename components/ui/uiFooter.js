@@ -84,6 +84,7 @@ export const Whastapp = styled.a`
 	//text-decoration: none;
 	${UiKitDefaults.mobile} {
 		bottom: 10vh;
+		margin-right: 5px;
 	}
 	&:hover {
 		box-shadow: 1px 1px 20px 1px rgba(50, 181, 67, 0.2);

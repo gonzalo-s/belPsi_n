@@ -6,32 +6,31 @@ export const Hamburguer = styled.button`
 	display: none;
 	//si es Mobile mostrar ham
 	${UiKitDefaults.mobile} {
-		//position: relative;
-		//margin-right: 25px;
 		display: flex;
 		cursor: pointer;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		justify-items: center;
-		//top: 0%;
 		right: 0%;
 		width: 30px;
 		height: 30px;
 		border-width: 0;
 		margin: 10px;
-		//right: 0;
 		padding: 17px;
-		background-color: ${UiKitDefaults.backgroundColor};
-		//background-color: red;
-
+		background-color: rgba(255, 255, 255, 0);
+		outline-style: none;
+		z-index: 1;
+		position: relative;
 		&:focus {
 			outline-style: none;
 		}
 		.xWrapper {
+			//background-color: red;
 			display: flex;
 			margin-top: 5px;
 			width: 30px;
+			height: 30px;
 		}
 	}
 `

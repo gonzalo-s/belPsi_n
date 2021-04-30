@@ -24,7 +24,7 @@ const color1 = '#DADED44d' // Tanly     | Background
 const color2 = '#3C403D' // Brown Grey  | Dark Text && Btn Background
 const color3 = '#ffffff' // White       | Light Text
 const color4 = '#39603D' // Green Leaf  | Highlighted Text && Hover
-const color5 = '#A3BCB64d' // Olive     | Background
+const color5 = '#A3BCB6' // Olive     | Background
 const color6 = 'rgba(163, 188, 182, 0.8)' // Olive     |
 
 //Olive: #A3BCB6
@@ -53,10 +53,11 @@ export const UiKitDefaults = {
 	hover: {
 		//color: color5, //Color palette 1
 		color: color4,
+		colorLight: color3,
 	},
 	buttons: {
 		backgroundColor: color2,
-		hover: color5,
+		hover: color1,
 	},
 	form: {
 		backgroundColor: color6,

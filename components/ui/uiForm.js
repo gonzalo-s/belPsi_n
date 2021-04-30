@@ -43,7 +43,7 @@ export const Button = styled.button`
 
 	&:hover {
 		background-color: ${UiKitDefaults.buttons.hover};
-		color: ${UiKitDefaults.textColor};
+		color: ${UiKitDefaults.hover.colorLight};
 	}
 `
 export const Input = styled.input`
