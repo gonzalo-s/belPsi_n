@@ -7,6 +7,8 @@ export const FooterWrapper = styled.footer`
 	width: 100%;
 	background-color: ${UiKitDefaults.backgroundColor};
 	align-items: center;
+	font-family: 'Josefin Sans';
+
 	${UiKitDefaults.mobile} {
 	}
 `
@@ -39,7 +41,6 @@ export const UlExtra = styled.ul`
 	justify-content: space-evenly;
 	white-space: nowrap;
 	flex-direction: column;
-	background-color: ${UiKitDefaults.backgroundColor};
 	max-height: 200px;
 	width: 50%;
 	align-items: start;
@@ -52,7 +53,7 @@ export const UlExtra = styled.ul`
 	}
 `
 export const Li = styled.li`
-	border-left: 1px solid ${UiKitDefaults.buttons.backgroundColor};
+	//border-left: 1px solid ${UiKitDefaults.buttons.backgroundColor};
 	border-spacing: 0px 5px;
 `
 export const A = styled.a`
@@ -61,6 +62,8 @@ export const A = styled.a`
 	text-decoration: none;
 	&:hover {
 		color: ${UiKitDefaults.hover.color};
+		font-weight: 900;
+		text-decoration: underline;
 	}
 `
 
@@ -71,10 +74,18 @@ export const Whastapp = styled.a`
 	position: fixed;
 	bottom: 15vh;
 	right: 15px;
+	max-width: 50px;
+	max-height: 50px;
+	margin-right: 50px;
+	border-radius: 50%;
 	cursor: pointer;
-	color: ${UiKitDefaults.textColorLight};
-	text-decoration: none;
+	background-color: rgba(0 0 0 0);
+	//color: ${UiKitDefaults.textColorLight};
+	//text-decoration: none;
 	${UiKitDefaults.mobile} {
 		bottom: 10vh;
+	}
+	&:hover {
+		box-shadow: 1px 1px 20px 1px rgba(50, 181, 67, 0.2);
 	}
 `

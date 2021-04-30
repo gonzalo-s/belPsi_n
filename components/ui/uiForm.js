@@ -42,7 +42,7 @@ export const Button = styled.button`
 	font-size: 18px;
 
 	&:hover {
-		background-color: ${UiKitDefaults.hover.color};
+		background-color: ${UiKitDefaults.buttons.hover};
 		color: ${UiKitDefaults.textColor};
 	}
 `

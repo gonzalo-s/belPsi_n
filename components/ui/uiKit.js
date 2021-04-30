@@ -10,6 +10,9 @@ body{
 	line-height: 1.6;
 	font-size: 18px;
 	min-height: 100%;
+	background-image: url(${UiKitDefaults.body.backgroundImage});
+	background-repeat: repeat;
+	background-color:${UiKitDefaults.body.backgroundColor};
 	
 }
 `
@@ -28,6 +31,8 @@ export const PageContentWrap = styled.div`
 	flex: 1;
 `
 
+// Index Page Quote
+
 export const QuoteWithImg = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -43,8 +48,7 @@ export const QuoteWrapper = styled.div`
 	width: 800px;
 	padding: 10px;
 	margin: 10% 25%;
-
-	border: 2px solid ${UiKitDefaults.backgroundColor};
+	border: 1px solid ${UiKitDefaults.buttons.backgroundColor};
 	${UiKitDefaults.mobile} {
 		flex-direction: column;
 	}
@@ -63,17 +67,20 @@ export const QuoteP = styled.p`
 	color: ${UiKitDefaults.textColor};
 
 	&::first-letter {
-		color: ${UiKitDefaults.highLightedText};
+		// dropCaps
+		color: ${UiKitDefaults.dropCaps};
 		font-size: 3.5rem;
 		float: left;
 		padding-right: 0.7rem;
 		line-height: 60%;
-		margin-top: 0.8rem;
+		margin-top: 0.7rem;
+		font-family: 'Josefin Sans';
 	}
 	${UiKitDefaults.mobile} {
 		width: 70%;
 	}
 `
+
 export const ContentWrapper = styled.div`
 	display: flex;
 	margin: 0% 25%;
@@ -83,12 +90,14 @@ export const ContentWrapper = styled.div`
 		color: ${UiKitDefaults.textColor};
 
 		.firstP::first-letter {
-			color: ${UiKitDefaults.highLightedText};
+			// dropCaps
+			color: ${UiKitDefaults.dropCaps};
 			font-size: 3.5rem;
 			float: left;
 			padding-right: 0.5rem;
 			line-height: 70%;
-			margin-top: 0.7rem;
+			margin-top: 0.6rem;
+			font-family: 'Josefin Sans';
 		}
 	}
 	${UiKitDefaults.mobile} {
@@ -102,7 +111,8 @@ export const Title = styled.h2`
 	margin-left: 15vw;
 	text-transform: uppercase;
 	letter-spacing: 5px;
-	color: ${UiKitDefaults.backgroundColor};
+	color: ${UiKitDefaults.highLightedText};
+	font-family: 'Josefin Sans';
 	${UiKitDefaults.mobile} {
 		margin-left: 5vw;
 	}
@@ -110,7 +120,8 @@ export const Title = styled.h2`
 export const H4 = styled.h4`
 	text-transform: uppercase;
 	letter-spacing: 5px;
-	color: ${UiKitDefaults.backgroundColor};
+	font-family: 'Josefin Sans';
+	color: ${UiKitDefaults.highLightedText};
 `
 
 export const ImgWrapp = styled.div`
@@ -143,12 +154,14 @@ export const ContentWrapperOnLine = styled.div`
 		flex-direction: column;
 		color: ${UiKitDefaults.textColor};
 		.firstP::first-letter {
-			color: ${UiKitDefaults.highLightedText};
+			// dropCaps
+			color: ${UiKitDefaults.dropCaps};
 			font-size: 3.5rem;
 			float: left;
 			padding-right: 0.5rem;
-			line-height: 70%;
-			margin-top: 0.8rem;
+			line-height: 60%;
+			margin-top: 0.5rem;
+			font-family: 'Josefin Sans';
 		}
 	}
 	${UiKitDefaults.mobile} {
