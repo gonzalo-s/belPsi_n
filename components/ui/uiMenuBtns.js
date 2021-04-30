@@ -38,10 +38,11 @@ export const Ul = styled.ul`
 	${Mobile} {
 		flex-direction: column;
 		margin: 0;
-		background-color: ${UiKitDefaults.backgroundColor};
-		min-height: 200px;
+		margin-top: -60px;
+		background-color: ${UiKitDefaults.mobileMenuBackground};
+		min-height: 300px;
 		width: 150px;
-		align-items: start;
+		//align-items: start;
 		display: ${(props) => (props.displayMenu ? 'block' : 'none')};
 	}
 `
@@ -49,7 +50,12 @@ export const Li = styled.li`
 	//border-left: 1px solid ${UiKitDefaults.buttons.backgroundColor};
 	border-spacing: 0px 5px;
 	margin-right: 15px;
-	padding-bottom: 10px;
+	${UiKitDefaults.mobile} {
+		padding-bottom: 10px;
+		&:first-child {
+			padding-top: 100px;
+		}
+	}
 `
 export const A = styled.a`
 	cursor: pointer;

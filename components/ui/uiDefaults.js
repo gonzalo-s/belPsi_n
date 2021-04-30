@@ -21,10 +21,12 @@ const mobile = `@media (max-width: ${desktopStartWidth})`
 // Color palette 3
 
 const color1 = '#DADED44d' // Tanly     | Background
-const color2 = '#3C403D' // Brown Grey| Dark Text && Btn Background
-const color3 = '#ffffff' // White     | Light Text
-const color4 = '#39603D' // Green Leaf| Highlighted Text && Hover
-const color5 = '#A3BCB64d' // Olive     |
+const color2 = '#3C403D' // Brown Grey  | Dark Text && Btn Background
+const color3 = '#ffffff' // White       | Light Text
+const color4 = '#39603D' // Green Leaf  | Highlighted Text && Hover
+const color5 = '#A3BCB64d' // Olive     | Background
+const color6 = 'rgba(163, 188, 182, 0.8)' // Olive     |
+
 //Olive: #A3BCB6
 
 //Green Leaf: #39603D
@@ -35,7 +37,6 @@ const color5 = '#A3BCB64d' // Olive     |
 
 //White: #FFFFFF
 
-console.log(mobile)
 export const UiKitDefaults = {
 	mobile: mobile,
 	desktop: desktop,
@@ -44,6 +45,7 @@ export const UiKitDefaults = {
 	textColorLight: color2,
 	highLightedText: color4,
 	dropCaps: color4,
+	mobileMenuBackground: color6,
 	body: {
 		backgroundColor: color1,
 		backgroundImage: 'fabrik-bk4.png',
@@ -57,7 +59,7 @@ export const UiKitDefaults = {
 		hover: color5,
 	},
 	form: {
-		backgroundColor: color5,
+		backgroundColor: color6,
 		buttonBackgroundColor: color3,
 	},
 }
