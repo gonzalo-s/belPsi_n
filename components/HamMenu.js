@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import {
 	Hamburguer,
-	HamHLine12,
+	HamHLine1,
+	HamHLine2,
 	HamHLine3,
 	HamXLine1,
 	HamXLine2,
@@ -14,13 +15,13 @@ function HamMenu({ displayMenu, handleMenuClick }) {
 		<Hamburguer onClick={handleMenuClick}>
 			{displayMenu ? (
 				<div className="xWrapper">
-					<HamXLine1 />
+					<HamXLine1 className="xLineOne" />
 					<HamXLine2 />
 				</div>
 			) : (
 				<div className="lineWrapper">
-					<HamHLine12 />
-					<HamHLine12 />
+					<HamHLine1 />
+					<HamHLine2 />
 					<HamHLine3 />
 				</div>
 			)}
@@ -29,3 +30,5 @@ function HamMenu({ displayMenu, handleMenuClick }) {
 }
 
 export default HamMenu
+
+// npm install --save-dev babel-plugin-styled-components

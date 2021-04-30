@@ -34,7 +34,7 @@ export const Hamburguer = styled.button`
 		}
 	}
 `
-export const HamHLine12 = styled.line`
+export const HamHLine1 = styled.div`
 	//no mostrar nada si es Desktop
 	display: none;
 	//si es Mobile mostrar
@@ -46,23 +46,43 @@ export const HamHLine12 = styled.line`
 		margin-bottom: 5px;
 	}
 `
-export const HamHLine3 = styled(HamHLine12)`
+export const HamHLine2 = styled.div`
 	//no mostrar nada si es Desktop
 	display: none;
 	//si es Mobile mostrar
 	${UiKitDefaults.mobile} {
 		display: block;
+		width: 30px;
+		height: 3px;
+		background: ${UiKitDefaults.buttons.backgroundColor};
+		margin-bottom: 5px;
+	}
+`
+
+export const HamHLine3 = styled.div`
+	//no mostrar nada si es Desktop
+	display: none;
+	//si es Mobile mostrar
+	${UiKitDefaults.mobile} {
+		display: block;
+		width: 30px;
+		height: 3px;
+		background: ${UiKitDefaults.buttons.backgroundColor};
 		margin-bottom: 0;
 	}
 `
 
-export const HamXLine1 = styled(HamHLine12)`
+export const HamXLine1 = styled.div`
 	//no mostrar nada si es Desktop
 	display: none;
 	//si es Mobile mostrar
 	${UiKitDefaults.mobile} {
 		display: block;
 		transform: rotate(45deg);
+		width: 30px;
+		height: 3px;
+		background: ${UiKitDefaults.buttons.backgroundColor};
+		margin-bottom: 5px;
 	}
 `
 
