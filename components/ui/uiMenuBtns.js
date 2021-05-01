@@ -23,7 +23,6 @@ export const NavbarWrapper = styled.nav`
 		top: 0;
 		right: 0;
 		width: 100%;
-		border-width: 0;
 	}
 `
 
@@ -31,45 +30,50 @@ export const Ul = styled.ul`
 	display: flex;
 	list-style: none;
 	justify-content: space-around;
-	width: 30%;
 	white-space: nowrap;
-	margin-right: 150px;
-
+	height: 100%;
+	gap: 1px;
+	padding: 0;
+	margin: 0;
 	${Mobile} {
+		display: ${(props) => (props.displayMenu ? 'flex' : 'none')};
 		flex-direction: column;
-		margin: 0;
-		margin-top: -60px;
+		padding-top: 60px;
+		height: auto;
+		gap: 2px;
 		background-color: ${UiKitDefaults.mobileMenuBackground};
-		min-height: 300px;
-		width: 150px;
-		//align-items: start;
-		display: ${(props) => (props.displayMenu ? 'block' : 'none')};
+		position: absolute;
+		right: 0;
+		z-index: 1;
 	}
 `
 export const Li = styled.li`
-	//border-left: 1px solid ${UiKitDefaults.buttons.backgroundColor};
-	border-spacing: 0px 5px;
-	margin-right: 15px;
+	display: flex;
+	height: 100%;
+	align-items: center;
 	${UiKitDefaults.mobile} {
-		padding-bottom: 10px;
-		&:first-child {
-			padding-top: 100px;
-		}
 	}
 `
 export const A = styled.a`
 	cursor: pointer;
 	text-decoration: none;
-
+	padding: 0.3rem 0.7rem;
 	color: ${UiKitDefaults.textColorLight};
+	span {
+		padding-top: 3px;
+		padding-bottom: 2px;
+		border-bottom: 1px solid transparent;
+	}
+
 	&:hover {
 		color: ${UiKitDefaults.hover.color};
-		font-weight: 900;
-		text-decoration: underline;
+		span {
+			border-bottom-color: ${UiKitDefaults.hover.color};
+		}
 	}
 `
+
 export const ALogo = styled(A)`
-	margin-left: 15vw;
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	font-family: 'Josefin Sans';
@@ -79,6 +83,5 @@ export const ALogo = styled(A)`
 		position: absolute;
 		left: 0;
 		top: 14px;
-		//display: none;
 	}
 `

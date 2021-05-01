@@ -4,95 +4,78 @@ import { UiKitDefaults } from '../ui/uiDefaults'
 export const Hamburguer = styled.button`
 	//no mostrar nada si es Desktop
 	display: none;
+	background-color: transparent;
 	//si es Mobile mostrar ham
 	${UiKitDefaults.mobile} {
 		display: flex;
 		cursor: pointer;
+		padding: 0;
+		margin: 0;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		justify-items: center;
-		right: 0%;
-		width: 30px;
-		height: 30px;
+		width: 40px;
+		height: 40px;
 		border-width: 0;
-		margin: 10px;
-		padding: 17px;
-		background-color: rgba(255, 255, 255, 0);
+
 		outline-style: none;
-		z-index: 1;
-		position: relative;
+		position: absolute;
+		z-index: 2;
+		right: 14px;
+		top: 14px;
 		&:focus {
 			outline-style: none;
 		}
 		.xWrapper {
-			//background-color: red;
 			display: flex;
-			margin-top: 5px;
+			flex-direction: column;
+			justify-content: center;
+			width: 30px;
+			height: 30px;
+		}
+		.lineWrapper {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
 			width: 30px;
 			height: 30px;
 		}
 	}
 `
 export const HamHLine1 = styled.div`
-	//no mostrar nada si es Desktop
-	display: none;
-	//si es Mobile mostrar
-	${UiKitDefaults.mobile} {
-		display: block;
-		width: 30px;
-		height: 3px;
-		background: ${UiKitDefaults.buttons.backgroundColor};
-		margin-bottom: 5px;
-	}
+	//display: block;
+	width: 100%;
+	height: 3px;
+	background: ${UiKitDefaults.buttons.backgroundColor};
+	//margin-bottom: 5px;
 `
 export const HamHLine2 = styled.div`
-	//no mostrar nada si es Desktop
-	display: none;
-	//si es Mobile mostrar
-	${UiKitDefaults.mobile} {
-		display: block;
-		width: 30px;
-		height: 3px;
-		background: ${UiKitDefaults.buttons.backgroundColor};
-		margin-bottom: 5px;
-	}
+	//display: block;
+	width: 100%;
+	height: 3px;
+	background: ${UiKitDefaults.buttons.backgroundColor};
+	//margin-bottom: 5px;
 `
 
 export const HamHLine3 = styled.div`
-	//no mostrar nada si es Desktop
-	display: none;
-	//si es Mobile mostrar
-	${UiKitDefaults.mobile} {
-		display: block;
-		width: 30px;
-		height: 3px;
-		background: ${UiKitDefaults.buttons.backgroundColor};
-		margin-bottom: 0;
-	}
+	//display: block;
+	width: 100%;
+	height: 3px;
+	background: ${UiKitDefaults.buttons.backgroundColor};
+	//margin-bottom: 0;
 `
 
 export const HamXLine1 = styled.div`
-	//no mostrar nada si es Desktop
-	display: none;
-	//si es Mobile mostrar
-	${UiKitDefaults.mobile} {
-		display: block;
-		transform: rotate(45deg);
-		width: 30px;
-		height: 3px;
-		background: ${UiKitDefaults.buttons.backgroundColor};
-		margin-bottom: 5px;
-	}
+	//display: block;
+	transform: rotate(45deg);
+	width: 100%;
+	height: 3px;
+	background: ${UiKitDefaults.buttons.backgroundColor};
+	//margin-bottom: 5px;
 `
 
 export const HamXLine2 = styled(HamXLine1)`
-	//no mostrar nada si es Desktop
-	display: none;
-	//si es Mobile mostrar
-	${UiKitDefaults.mobile} {
-		display: block;
-		position: absolute;
-		transform: rotate(-45deg);
-	}
+	//display: block;
+	//position: absolute;
+	transform: rotate(-45deg);
 `

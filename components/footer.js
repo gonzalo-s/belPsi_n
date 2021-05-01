@@ -21,7 +21,9 @@ function Footer() {
 						return (
 							<Li key={i}>
 								<Link href={item.link}>
-									<A>{item.text}</A>
+									<A>
+										<span>{item.text}</span>
+									</A>
 								</Link>
 							</Li>
 						)
@@ -32,7 +34,9 @@ function Footer() {
 						return (
 							<Li key={i}>
 								<Link href={item.link}>
-									<A>{item.text}</A>
+									<A>
+										<span>{item.text}</span>
+									</A>
 								</Link>
 							</Li>
 						)

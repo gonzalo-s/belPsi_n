@@ -1,7 +1,9 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import { UiKitDefaults } from '../ui/uiDefaults'
-
 export const GlobalStyle = createGlobalStyle`
+
+
+
 body{
 	padding: 0;
 	margin: 0;
@@ -23,6 +25,9 @@ export const PageContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	max-width: 1024px;
+	width: 100%;
+	margin: auto;
 `
 
 export const Main = styled.div``
@@ -84,10 +89,13 @@ export const QuoteP = styled.p`
 export const ContentWrapper = styled.div`
 	display: flex;
 	margin: 0% 25%;
+	margin-left: 10vw;
+	position: relative;
 	.TextWrapper {
 		display: flex;
 		flex-direction: column;
 		color: ${UiKitDefaults.textColor};
+		text-align: justify;
 
 		.firstP::first-letter {
 			// dropCaps
@@ -102,14 +110,16 @@ export const ContentWrapper = styled.div`
 	}
 	${UiKitDefaults.mobile} {
 		margin: 0% 5%;
+		//flex-direction: column-reverse;
 	}
 `
 export const Ul = styled.ul`
 	width: 90%;
 `
 export const Title = styled.h2`
-	margin-left: 15vw;
+	padding-left: 0.7rem;
 	text-transform: uppercase;
+
 	letter-spacing: 5px;
 	color: ${UiKitDefaults.highLightedText};
 	font-family: 'Josefin Sans';
@@ -130,37 +140,52 @@ export const ImgWrapp = styled.div`
 	min-width: 50px;
 	height: 100%;
 	padding: 2%;
-	//border-radius: 50%;
-	//background-color: ${UiKitDefaults.buttons.backgroundColor};
-
+	position: absolute;
+	transform: translateX(100%);
+	margin-right: -2vw;
+	right: 0;
 	.img {
 		width: 100%;
 	}
-`
-export const ImgWrappOnLine = styled(ImgWrapp)`
-	max-width: 540px;
-	margin: 0% 25%;
-
 	${UiKitDefaults.mobile} {
-		max-width: 70%;
-		margin: 0% 5%;
+		transform: none;
+		position: relative;
+	}
+`
+
+export const ImgWrappOnLine = styled.div`
+	display: flex;
+	width: 100%;
+	height: 100%;
+	.img {
+		margin: 2vw 4vw;
+		width: 100%;
+	}
+	${UiKitDefaults.mobile} {
+		width: 90%;
 	}
 `
 export const ContentWrapperOnLine = styled.div`
 	display: flex;
 	margin: 0% 25%;
+	flex-direction: column;
+	margin-left: 10vw;
+	position: relative;
 	.TextWrapper {
 		display: flex;
 		flex-direction: column;
+
 		color: ${UiKitDefaults.textColor};
+		text-align: justify;
+
 		.firstP::first-letter {
 			// dropCaps
 			color: ${UiKitDefaults.dropCaps};
 			font-size: 3.5rem;
 			float: left;
 			padding-right: 0.5rem;
-			line-height: 60%;
-			margin-top: 0.5rem;
+			line-height: 70%;
+			margin-top: 0.6rem;
 			font-family: 'Josefin Sans';
 		}
 	}

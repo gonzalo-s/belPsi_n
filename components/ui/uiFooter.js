@@ -8,66 +8,73 @@ export const FooterWrapper = styled.footer`
 	background-color: ${UiKitDefaults.backgroundColor};
 	align-items: center;
 	font-family: 'Josefin Sans';
-
-	${UiKitDefaults.mobile} {
-	}
+	max-height: 28vh;
+	padding-top: 5vh;
 `
 
 export const FooterTop = styled.div`
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-	justify-content: center;
-	margin: 0 50%;
+	justify-content: space-evenly;
+	//margin: 0 50%;
 `
 
 export const UlMenu = styled.ul`
 	display: flex;
+	flex-direction: column;
 	list-style: none;
 	justify-content: space-evenly;
 	white-space: nowrap;
-	flex-direction: column;
-	max-height: 200px;
-	width: 50%;
-	align-items: start;
-	margin-left: 20%;
+	//margin-left: 20%;
+	width: 12vw;
+	padding: 0;
+	margin: 0;
 	${UiKitDefaults.mobile} {
 		display: none;
 	}
 `
 export const UlExtra = styled.ul`
 	display: flex;
+	flex-direction: column;
 	list-style: none;
 	justify-content: space-evenly;
 	white-space: nowrap;
-	flex-direction: column;
-	max-height: 200px;
-	width: 50%;
-	align-items: start;
+	width: 12vw;
+	padding: 0;
+	margin: 0;
 	${UiKitDefaults.mobile} {
 		width: 100%;
-		align-items: left;
+		//align-items: left;
 		height: 100px;
-		margin: 0 50%;
-		padding: 0;
+		padding-left: 2vw;
 	}
 `
 export const Li = styled.li`
-	//border-left: 1px solid ${UiKitDefaults.buttons.backgroundColor};
-	border-spacing: 0px 5px;
+	display: flex;
+	width: 100%;
+	justify-content: flex-start;
 `
 export const A = styled.a`
 	cursor: pointer;
-	color: ${UiKitDefaults.textColorLight};
 	text-decoration: none;
+	padding: 0.3rem 0.9rem;
+	color: ${UiKitDefaults.textColorLight};
+	span {
+		padding-top: 3px;
+		padding-bottom: 2px;
+		border-bottom: 1px solid transparent;
+	}
 	&:hover {
 		color: ${UiKitDefaults.hover.color};
-		font-weight: 900;
-		text-decoration: underline;
+		span {
+			border-bottom-color: ${UiKitDefaults.hover.color};
+		}
 	}
 `
 
 export const FooterBottom = styled.div`
+	display: flex;
 	color: ${UiKitDefaults.textColorLight};
 `
 export const Whastapp = styled.a`
