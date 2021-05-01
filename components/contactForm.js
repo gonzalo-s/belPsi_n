@@ -11,6 +11,8 @@ import {
 	Form,
 	Label,
 	ErrorLabel,
+	InputWrapper,
+	TextInputWrapper,
 } from './ui/uiForm'
 
 function ContactForm() {
@@ -75,70 +77,83 @@ function ContactForm() {
 		<FormWrapper>
 			<div>{isLoading ? <Loading /> : ''}</div>
 			<Form onSubmit={handleSubmit(onSubmit)}>
-				<Label>
-					Nombre:&nbsp;
-					<ErrorLabel>{errors?.name?.message}</ErrorLabel>
-				</Label>
+				<InputWrapper>
+					<Label>
+						Nombre:&nbsp;
+						<ErrorLabel>{errors?.name?.message}</ErrorLabel>
+					</Label>
 
-				<Input
-					name="name"
-					placeholder="Nombre"
-					ref={register({
-						required: { value: true, message: 'Ingresar Nombre' },
-						minLength: {
-							value: 3,
-							message: 'Ingresar al menos 3 caracteres',
-						},
-					})}
-				></Input>
+					<Input
+						name="name"
+						placeholder="Nombre"
+						ref={register({
+							required: {
+								value: true,
+								message: 'Ingresar Nombre',
+							},
+							minLength: {
+								value: 3,
+								message: 'Ingresar al menos 3 caracteres',
+							},
+						})}
+					></Input>
+				</InputWrapper>
+				<InputWrapper>
+					<Label>
+						Email:&nbsp;
+						<ErrorLabel>{errors?.replyTo?.message}</ErrorLabel>
+					</Label>
+					<Input
+						name="replyTo"
+						placeholder="Email"
+						ref={register({
+							required: {
+								value: true,
+								message: 'Ingresar Email',
+							},
+							pattern: {
+								value: /[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$/,
+								message: 'Ingresar Email válido',
+							},
+						})}
+					></Input>
+				</InputWrapper>
+				<InputWrapper>
+					<Label>
+						Teléfono:&nbsp;
+						<ErrorLabel>{errors?.phone?.message}</ErrorLabel>
+					</Label>
+					<Input
+						name="phone"
+						placeholder="011 2222 3333"
+						ref={register({
+							pattern: {
+								value: /[0-9+]{2}/,
+								message: 'Ingresar Nro de telefono válido',
+							},
+						})}
+					></Input>
+				</InputWrapper>
+				<TextInputWrapper>
+					<Label>
+						Consulta:&nbsp;
+						<ErrorLabel>{errors?.consulta?.message}</ErrorLabel>
+					</Label>
 
-				<Label>
-					Email:&nbsp;
-					<ErrorLabel>{errors?.replyTo?.message}</ErrorLabel>
-				</Label>
-				<Input
-					name="replyTo"
-					placeholder="Email"
-					ref={register({
-						required: { value: true, message: 'Ingresar Email' },
-						pattern: {
-							value: /[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$/,
-							message: 'Ingresar Email válido',
-						},
-					})}
-				></Input>
-
-				<Label>
-					Teléfono:&nbsp;
-					<ErrorLabel>{errors?.phone?.message}</ErrorLabel>
-				</Label>
-				<Input
-					name="phone"
-					placeholder="011 2222 3333"
-					ref={register({
-						pattern: {
-							value: /[0-9+]{2}/,
-							message: 'Ingresar Nro de telefono válido',
-						},
-					})}
-				></Input>
-
-				<Label>
-					Consulta:&nbsp;
-					<ErrorLabel>{errors?.consulta?.message}</ErrorLabel>
-				</Label>
-				<Textarea
-					minHeight={'100px'}
-					name="consulta"
-					ref={register({
-						required: { value: true, message: 'Ingresar consulta' },
-						minLength: {
-							value: 10,
-							message: 'Ingresar al menos 10 caracteres',
-						},
-					})}
-				></Textarea>
-
+					<Textarea
+						name="consulta"
+						ref={register({
+							required: {
+								value: true,
+								message: 'Ingresar consulta',
+							},
+							minLength: {
+								value: 10,
+								message: 'Ingresar al menos 10 caracteres',
+							},
+						})}
+					></Textarea>
+				</TextInputWrapper>
 				<Button type="submit">Enviar</Button>
 			</Form>
 		</FormWrapper>

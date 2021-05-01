@@ -1,13 +1,12 @@
 import Head from 'next/head'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
+
 import {
 	Container,
 	PageContainer,
 	PageContentWrap,
 	Main,
-} from '../components/ui/uiKit'
-import {
 	Title,
 	H4,
 	Ul,

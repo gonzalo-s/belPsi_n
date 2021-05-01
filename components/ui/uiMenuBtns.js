@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 import { UiKitDefaults } from '../ui/uiDefaults'
 
-const desktopStartWidth = '996px'
-//const Desktop = `@media (min-width: ${desktopStartWidth})`
-const Mobile = `@media (max-width: ${desktopStartWidth})`
-
 export const NavbarWrapper = styled.nav`
 	display: flex;
 	flex-direction: row;
@@ -14,7 +10,7 @@ export const NavbarWrapper = styled.nav`
 	height: 60px;
 	font-family: 'Josefin Sans';
 
-	${Mobile} {
+	${UiKitDefaults.mobile} {
 		display: flex;
 		height: 60px;
 		position: relative;
@@ -35,7 +31,7 @@ export const Ul = styled.ul`
 	gap: 1px;
 	padding: 0;
 	margin: 0;
-	${Mobile} {
+	${UiKitDefaults.mobile} {
 		display: ${(props) => (props.displayMenu ? 'flex' : 'none')};
 		flex-direction: column;
 		padding-top: 60px;
@@ -51,14 +47,17 @@ export const Li = styled.li`
 	display: flex;
 	height: 100%;
 	align-items: center;
-	${UiKitDefaults.mobile} {
-	}
 `
 export const A = styled.a`
 	cursor: pointer;
 	text-decoration: none;
 	padding: 0.3rem 0.7rem;
 	color: ${UiKitDefaults.textColorLight};
+	${UiKitDefaults.mobile} {
+		padding: 1rem 2rem;
+		font-size: 1.5rem;
+	}
+
 	span {
 		padding-top: 3px;
 		padding-bottom: 2px;
@@ -73,13 +72,28 @@ export const A = styled.a`
 	}
 `
 
-export const ALogo = styled(A)`
+export const ALogo = styled.a`
+	cursor: pointer;
+	text-decoration: none;
+	padding: 0.3rem 0.7rem;
+	color: ${UiKitDefaults.textColorLight};
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	font-family: 'Josefin Sans';
+	span {
+		padding-top: 3px;
+		padding-bottom: 2px;
+		border-bottom: 1px solid transparent;
+	}
 
+	&:hover {
+		color: ${UiKitDefaults.hover.color};
+		span {
+			border-bottom-color: ${UiKitDefaults.hover.color};
+		}
+	}
 	color: ${UiKitDefaults.highLightedText};
-	${Mobile} {
+	${UiKitDefaults.mobile} {
 		position: absolute;
 		left: 0;
 		top: 14px;

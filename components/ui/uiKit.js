@@ -110,7 +110,8 @@ export const ContentWrapper = styled.div`
 	}
 	${UiKitDefaults.mobile} {
 		margin: 0% 5%;
-		//flex-direction: column-reverse;
+		flex-direction: column-reverse;
+		align-items: center;
 	}
 `
 export const Ul = styled.ul`
@@ -158,11 +159,10 @@ export const ImgWrappOnLine = styled.div`
 	width: 100%;
 	height: 100%;
 	.img {
-		margin: 2vw 4vw;
+		margin: 2vw 2vw;
 		width: 100%;
 	}
 	${UiKitDefaults.mobile} {
-		width: 90%;
 	}
 `
 export const ContentWrapperOnLine = styled.div`
