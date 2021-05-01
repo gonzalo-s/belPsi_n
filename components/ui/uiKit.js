@@ -106,6 +106,9 @@ export const ContentWrapper = styled.div`
 			line-height: 70%;
 			margin-top: 0.6rem;
 			font-family: 'Josefin Sans';
+			${UiKitDefaults.mobile} {
+				margin-left: -0.3rem;
+			}
 		}
 	}
 	${UiKitDefaults.mobile} {
@@ -126,6 +129,7 @@ export const Title = styled.h2`
 	font-family: 'Josefin Sans';
 	${UiKitDefaults.mobile} {
 		margin-left: 5vw;
+		padding-left: 0;
 	}
 `
 export const H4 = styled.h4`
