@@ -1,22 +1,25 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import { UiKitDefaults } from '../ui/uiDefaults'
+
 export const GlobalStyle = createGlobalStyle`
+	html, body {
+		position: relative;
+		width: 100%;
+		overflow-x:hidden;
+	}
 
-
-
-body{
-	padding: 0;
-	margin: 0;
-	font-family: 'Vollkorn',-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	line-height: 1.6;
-	font-size: 18px;
-	min-height: 100%;
-	background-image: url(${UiKitDefaults.body.backgroundImage});
-	background-repeat: repeat;
-	background-color:${UiKitDefaults.body.backgroundColor};
-	
-}
+	body{
+		padding: 0;
+		margin: 0;
+		font-family: 'Vollkorn',-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+			Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+		line-height: 1.6;
+		font-size: 18px;
+		min-height: 100%;
+		background-image: url(${UiKitDefaults.body.backgroundImage});
+		background-repeat: repeat;
+		background-color:${UiKitDefaults.body.backgroundColor};
+	}
 `
 
 export const Container = styled.div``
@@ -28,6 +31,10 @@ export const PageContainer = styled.div`
 	max-width: 1024px;
 	width: 100%;
 	margin: auto;
+	padding-top: 0;
+	${UiKitDefaults.mobile} {
+		padding-top: 6rem;
+	}
 `
 
 export const Main = styled.div``
