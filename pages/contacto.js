@@ -8,23 +8,31 @@ import {
 	PageContentWrap,
 	Main,
 } from '../components/ui/uiKit'
+import { VStack, Image, Wrap, WrapItem, Text } from '@chakra-ui/react'
 
 export default function Contact() {
 	return (
-		<Container>
+		<VStack background="red">
 			<Head>
 				<title>LIC MBS</title>
 				<link rel="icon" href="/32px-Psi2.svg.png" />
 			</Head>
-			<PageContainer>
-				<PageContentWrap>
-					<Navbar />
-					<Main>
-						<ContactForm />
-					</Main>
-				</PageContentWrap>
+			<VStack
+				pt="1vh"
+				pb="1vh"
+				className="fullWrapper"
+				background="green"
+				w="70vw"
+				h="100vh"
+				border="2px"
+				justifyContent="space-between"
+			>
+				<Navbar />
+				<VStack className="mainWrapper">
+					<ContactForm />
+				</VStack>
 				<Footer />
-			</PageContainer>
-		</Container>
+			</VStack>
+		</VStack>
 	)
 }

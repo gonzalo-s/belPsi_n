@@ -10,6 +10,7 @@ import {
 	MenuWrapp,
 } from '../components/ui/uiMenuBtns'
 import { CgMenu, CgClose } from 'react-icons/cg'
+import { Box, Stack, HStack } from '@chakra-ui/react'
 
 function Navbar() {
 	const [displayMenu, setDisplayMenu] = useState(false)
@@ -17,7 +18,7 @@ function Navbar() {
 		setDisplayMenu(!displayMenu)
 	}
 	return (
-		<NavbarWrapper>
+		<HStack>
 			<MenuWrapp
 				onClick={handleMenuClick}
 				displayMenu={displayMenu}
@@ -47,7 +48,7 @@ function Navbar() {
 					)
 				})}
 			</Ul>
-		</NavbarWrapper>
+		</HStack>
 	)
 }
 export default Navbar

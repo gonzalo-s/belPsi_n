@@ -1,10 +1,13 @@
 //import '../styles/globals.css'
-import { GlobalStyle } from '../components/ui/uiKit'
+//import { GlobalStyle } from '../components/ui/uiKit'
+import { ChakraProvider } from '@chakra-ui/react'
+
 function MyApp({ Component, pageProps }) {
 	return (
 		<div>
-			<GlobalStyle />
-			<Component {...pageProps} />
+			<ChakraProvider>
+				<Component {...pageProps} />
+			</ChakraProvider>
 		</div>
 	)
 }
