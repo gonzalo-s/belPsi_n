@@ -70,21 +70,22 @@ function ContactForm() {
 	}
 
 	return (
-		<Box display="flex" minH="70%" minW="80%" justifyContent="center">
+		<Box display="flex" justifyContent="center">
 			<div>{isLoading ? <Loading /> : ''}</div>
 			<Box
+				m="5px"
 				display="flex"
-				minH="70%"
-				w="100%"
+				minH="50vh"
+				minW="50vw"
 				justifyContent="center"
 				border="1px"
 				borderRadius="0.5rem"
 			>
 				<VStack
 					display="flex"
-					w="90%"
 					justifyContent="space-evenly"
 					alignItems="stretch"
+					w="90%"
 				>
 					<VStack alignItems="start">
 						<HStack p="0.4rem" pt="1rem">

@@ -32,9 +32,8 @@ export default function Contact() {
 					className="mainWrapper"
 					justifyContent="center"
 					backgroundColor="violet"
-					border="1px"
 					w="100%"
-					h="80vh"
+					h="100%"
 				>
 					<ContactForm />
 				</VStack>
