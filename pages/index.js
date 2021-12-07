@@ -24,42 +24,39 @@ export default function Home() {
 				pb="1vh"
 				className="fullWrapper"
 				background="green"
-				w="70vw"
-				h="100vh"
-				border="2px"
+				w="70%"
+				minH="100vh"
+				h="100%"
 				justifyContent="space-between"
 			>
 				<Navbar />
-				<VStack className="mainWrapper">
-					<Wrap
-						border="2px"
-						justify="space-around"
-						align="center"
-						w="50vw"
-						p="15px"
-					>
-						<WrapItem>
-							<Image
-								src={'./calm-1919x1390.jpg'}
-								alt="Calma"
-								boxSize="30vh"
-							/>
-						</WrapItem>
-						<WrapItem>
-							<VStack>
-								<Text as="i" w="20em" h="6em">
-									"Todo puede serle arrebatado a un hombre,
-									menos la última de las libertades humanas:
-									el elegir su actitud en una serie de
-									circunstancias."
-								</Text>
-								<Text w="20em" h="2em" align="end">
-									Viktor Frankl
-								</Text>
-							</VStack>
-						</WrapItem>
-					</Wrap>
-				</VStack>
+				<Wrap
+					border="2px"
+					justify="space-around"
+					align="center"
+					w="50vw"
+					p="15px"
+				>
+					<WrapItem>
+						<Image
+							src={'./calm-1919x1390.jpg'}
+							alt="Calma"
+							boxSize="30vh"
+						/>
+					</WrapItem>
+					<WrapItem>
+						<VStack>
+							<Text as="i" w="20em" h="6em">
+								"Todo puede serle arrebatado a un hombre, menos
+								la última de las libertades humanas: el elegir
+								su actitud en una serie de circunstancias."
+							</Text>
+							<Text w="20em" h="2em" align="end">
+								Viktor Frankl
+							</Text>
+						</VStack>
+					</WrapItem>
+				</Wrap>
 				<Footer />
 			</VStack>
 		</VStack>

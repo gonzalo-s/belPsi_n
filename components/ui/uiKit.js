@@ -2,11 +2,11 @@ import styled, { createGlobalStyle } from 'styled-components'
 import { UiKitDefaults } from '../ui/uiDefaults'
 
 export const GlobalStyle = createGlobalStyle`
-	/* html, body {
+	html, body {
 		position: relative;
 		width: 100%;
-		overflow-x:hidden;
-	} */
+		overflow-y: visible;
+	}
 
 	/* body{
 		padding: 0;
@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
 		background-image: url(${UiKitDefaults.body.backgroundImage});
 		background-repeat: repeat;
 		background-color:${UiKitDefaults.body.backgroundColor};
-	} */
+	}  */
 `
 
 export const Container = styled.div``

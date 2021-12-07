@@ -22,13 +22,20 @@ export default function Contact() {
 				pb="1vh"
 				className="fullWrapper"
 				background="green"
-				w="70vw"
-				h="100vh"
-				border="2px"
+				w="70%"
+				minH="100vh"
+				h="100%"
 				justifyContent="space-between"
 			>
 				<Navbar />
-				<VStack className="mainWrapper">
+				<VStack
+					className="mainWrapper"
+					justifyContent="center"
+					backgroundColor="violet"
+					border="1px"
+					w="100%"
+					h="80vh"
+				>
 					<ContactForm />
 				</VStack>
 				<Footer />

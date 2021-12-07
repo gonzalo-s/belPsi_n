@@ -9,7 +9,16 @@ import {
 } from '../components/ui/uiKit'
 import { Title, H4, Ul, ContentWrapper, ImgWrapp } from '../components/ui/uiKit'
 import TratamientosData from '../components/TxtDb'
-import { VStack, Image, Wrap, WrapItem, Text } from '@chakra-ui/react'
+import {
+	VStack,
+	Box,
+	Image,
+	Wrap,
+	WrapItem,
+	Text,
+	Heading,
+	UnorderedList,
+} from '@chakra-ui/react'
 
 export default function Services() {
 	return (
@@ -23,29 +32,53 @@ export default function Services() {
 				pb="1vh"
 				className="fullWrapper"
 				background="green"
-				w="70vw"
-				h="100vh"
-				border="2px"
+				w="70%"
+				minH="100vh"
+				h="100%"
 				justifyContent="space-between"
 			>
 				<Navbar />
-				<VStack className="mainWrapper">
-					<Title>Tratamientos</Title>
-					<ContentWrapper className="contentWapper">
-						<div className="TextWrapper">
-							<p className="firstP">
-								Tratamientos orientados a niños, adolescentes y
-								adultos.
-							</p>
 
-							<H4>¿Cuando consultar?</H4>
-							<Ul className="ul">
-								{TratamientosData.map((tratamiento, i) => {
-									return <li key={i}>{tratamiento.text}</li>
-								})}
-							</Ul>
-						</div>
-					</ContentWrapper>
+				<VStack
+					className="mainWrapper"
+					className="mainWrapper"
+					justifyContent="space-between"
+					backgroundColor="violet"
+					border="1px"
+					w="100%"
+				>
+					<Box
+						display="flex"
+						justifyContent="start"
+						w="70%"
+						pt="2rem"
+					>
+						<Heading as="h1" size="lg" letterSpacing="0.2rem">
+							Tratamientos
+						</Heading>
+					</Box>
+
+					<Box
+						className="contentWapper"
+						display="flex"
+						flexDirection="column"
+						border="1px"
+						w="50%"
+					>
+						<Text p="2rem">
+							Tratamientos orientados a niños, adolescentes y
+							adultos.
+						</Text>
+
+						<Heading as="h4" size="md" letterSpacing="0.2rem">
+							¿Cuando consultar?
+						</Heading>
+						<UnorderedList p="2em">
+							{TratamientosData.map((tratamiento, i) => {
+								return <li key={i}>{tratamiento.text}</li>
+							})}
+						</UnorderedList>
+					</Box>
 				</VStack>
 				<Footer />
 			</VStack>

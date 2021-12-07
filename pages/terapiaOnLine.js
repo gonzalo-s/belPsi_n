@@ -1,19 +1,16 @@
 import Head from 'next/head'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
-import { VStack, Image, Wrap, WrapItem, Text } from '@chakra-ui/react'
-
 import {
-	Container,
-	PageContainer,
-	PageContentWrap,
-	Main,
-	Title,
-	H4,
-	Ul,
-	ContentWrapperOnLine,
-	ImgWrappOnLine,
-} from '../components/ui/uiKit'
+	Box,
+	VStack,
+	HStack,
+	Heading,
+	Text,
+	UnorderedList,
+	listItem,
+	Image,
+} from '@chakra-ui/react'
 
 export default function Online() {
 	return (
@@ -27,47 +24,70 @@ export default function Online() {
 				pb="1vh"
 				className="fullWrapper"
 				background="green"
-				w="70vw"
-				h="100vh"
-				border="2px"
+				w="70%"
+				minH="100vh"
+				h="100%"
 				justifyContent="space-between"
 			>
 				<Navbar />
-				<VStack className="mainWrapper">
-					<Title>¿QUE ES LA TERAPIA ONLINE?</Title>
-					<ContentWrapperOnLine className="WrapperOnLine">
-						<ImgWrappOnLine>
-							<img
+				<VStack
+					className="mainWrapper"
+					className="mainWrapper"
+					justifyContent="space-between"
+					backgroundColor="violet"
+					w="100%"
+				>
+					<Box
+						display="flex"
+						justifyContent="start"
+						w="70%"
+						pt="2rem"
+					>
+						<Heading as="h1" size="lg" letterSpacing="0.2rem">
+							¿Que es la terapia On-Line?
+						</Heading>
+					</Box>
+
+					<Box
+						className="contentWapper"
+						display="flex"
+						flexDirection="column"
+						border="1px"
+						w="50%"
+					>
+						<Box boxSize="lg" h="100%" w="100%" p="2rem">
+							<Image
 								className="img"
 								src={'notebook 640×426px.jpg'}
 								alt="notebook"
 							/>
-						</ImgWrappOnLine>
-						<div className="TextWrapper">
-							<p className="firstP">
-								La terapia online consiste en sesiones de
-								terapia psicológica con un terapeuta
-								especializado a través de un celular, tablet o
-								computadora realizando una video llamada por
-								whatsapp , zoom o Skype.
-							</p>
-
-							<H4>ALGUNAS VENTAJAS DE LA TERAPIA ONLINE</H4>
-							<Ul className="ul">
-								<li>Ahorro de tiempo.</li>
-								<li>Ahorro económico.</li>
-								<li>
-									Flexibilidad horaria para coordinar turnos.
-								</li>
-								<li>
-									Facilidad para personas con limitaciones
-									físicas.
-								</li>
-								<li>Comodidad.</li>
-								<li>Trabajar desde un ambiente conocido.</li>
-							</Ul>
-						</div>
-					</ContentWrapperOnLine>
+						</Box>
+						<Text p="2rem">
+							La terapia On-Line consiste en sesiones de terapia
+							psicológica con un terapeuta especializado a través
+							de un celular, tablet o computadora realizando una
+							video llamada por whatsapp , zoom o Skype.
+						</Text>
+						<VStack alignItems="start">
+							<Heading as="h4" size="md" letterSpacing="0.2rem">
+								Algunas ventajas de la terapia
+							</Heading>
+							<Heading as="h4" size="md" letterSpacing="0.2rem">
+								On-Line
+							</Heading>
+						</VStack>
+						<UnorderedList p="2em">
+							<li>Ahorro de tiempo.</li>
+							<li>Ahorro económico.</li>
+							<li>Flexibilidad horaria para coordinar turnos.</li>
+							<li>
+								Facilidad para personas con limitaciones
+								físicas.
+							</li>
+							<li>Comodidad.</li>
+							<li>Trabajar desde un ambiente conocido.</li>
+						</UnorderedList>
+					</Box>
 				</VStack>
 				<Footer />
 			</VStack>
