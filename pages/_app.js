@@ -4,7 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 function MyApp({ Component, pageProps }) {
 	return (
 		<div>
-			<ChakraProvider>
+			<ChakraProvider resetCSS>
 				<Component {...pageProps} />
 			</ChakraProvider>
 		</div>

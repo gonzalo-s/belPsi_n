@@ -57,6 +57,7 @@ export default function Online() {
 					>
 						<Box boxSize="lg" h="100%" w="100%" p="2rem">
 							<Image
+								borderRadius="5px"
 								className="img"
 								src={'notebook 640×426px.jpg'}
 								alt="notebook"

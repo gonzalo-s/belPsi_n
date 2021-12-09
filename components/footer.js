@@ -20,19 +20,19 @@ function Footer() {
 				<VStack alignItems="flex-start">
 					{LinksDb.menu.map((item, i) => {
 						return (
-							<Box display="flex">
-								<NextLink key={i} href={item.link} passHref>
+							<Box display="flex" key={i}>
+								<NextLink href={item.link} passHref>
 									<Link
 										pl="1rem"
 										pr="1rem"
 										color={
 											router.asPath === item.link
-												? '#FFC0CB'
+												? 'pink.100'
 												: ''
 										}
 										_hover={{
 											boxShadow: 'none',
-											color: '#FFC0CB',
+											color: 'pink.100',
 										}}
 										_focus={{
 											boxShadow: 'none',
@@ -48,14 +48,14 @@ function Footer() {
 				<VStack alignItems="flex-start">
 					{LinksDb.footerExtra.map((item, i) => {
 						return (
-							<Box display="flex">
-								<NextLink key={i} href={item.link} passHref>
+							<Box display="flex" key={i}>
+								<NextLink href={item.link} passHref>
 									<Link
 										pl="1rem"
 										pr="1rem"
 										_hover={{
 											boxShadow: 'none',
-											color: '#FFC0CB',
+											color: 'pink.100',
 										}}
 										_focus={{
 											boxShadow: 'none',
