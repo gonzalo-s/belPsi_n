@@ -1,38 +1,28 @@
-import Document from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+import theme from '../themes/theme'
+import { ColorModeScript } from '@chakra-ui/react'
 
-export default class MyDocument extends Document {
+class MyDocument extends Document {
 	static async getInitialProps(ctx) {
-		const sheet = new ServerStyleSheet()
-		const originalRenderPage = ctx.renderPage
+		const initialProps = await Document.getInitialProps(ctx)
+		return { ...initialProps }
+	}
 
-		try {
-			ctx.renderPage = () =>
-				originalRenderPage({
-					enhanceApp: (App) => (props) =>
-						sheet.collectStyles(<App {...props} />),
-				})
+	render() {
+		return (
+			<Html>
+				<Head />
+				<body>
+					<ColorModeScript
+						initialColorMode={theme.config.initialColorMode}
+					/>
 
-			const initialProps = await Document.getInitialProps(ctx)
-			return {
-				...initialProps,
-				styles: (
-					<>
-						<link
-							href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap"
-							rel="stylesheet"
-						/>
-						<link
-							href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
-							rel="stylesheet"
-						/>
-						{initialProps.styles}
-						{sheet.getStyleElement()}
-					</>
-				),
-			}
-		} finally {
-			sheet.seal()
-		}
+					<Main />
+					<NextScript />
+				</body>
+			</Html>
+		)
 	}
 }
+
+export default MyDocument

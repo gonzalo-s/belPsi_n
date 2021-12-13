@@ -3,7 +3,7 @@ const LinksDb = {
 		{ link: '/', text: 'Inicio' },
 		{ link: '/quiensoy', text: 'Quien Soy' },
 		{ link: '/tratamientos', text: 'Tratamientos' },
-		{ link: '/terapiaOnLine', text: 'Terapia OnLine' },
+		{ link: '/terapiaOnLine', text: 'Terapia On-Line' },
 		{ link: '/contacto', text: 'Contacto' },
 	],
 
