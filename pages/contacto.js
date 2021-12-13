@@ -1,18 +1,15 @@
 import Head from 'next/head'
+import React from 'react'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import ContactForm from '../components/contactForm'
-import {
-	Container,
-	PageContainer,
-	PageContentWrap,
-	Main,
-} from '../components/ui/uiKit'
-import { VStack, Image, Wrap, WrapItem, Text } from '@chakra-ui/react'
+import { VStack, Box, useColorModeValue } from '@chakra-ui/react'
+import { customColors } from '../themes/customColors'
 
 export default function Contact() {
+	const bg = useColorModeValue(customColors.lightBg, customColors.darkBg)
 	return (
-		<VStack background="red">
+		<VStack bg={bg}>
 			<Head>
 				<title>LIC MBS</title>
 				<link rel="icon" href="/32px-Psi2.svg.png" />
@@ -21,21 +18,22 @@ export default function Contact() {
 				pt="1vh"
 				pb="1vh"
 				className="fullWrapper"
-				background="green"
-				w="70%"
+				w={['100%', '100%', '90%', '80%', '70%']}
 				minH="100vh"
 				h="100%"
 				justifyContent="space-between"
+				bg={bg}
 			>
 				<Navbar />
 				<VStack
 					className="mainWrapper"
 					justifyContent="center"
-					backgroundColor="violet"
 					w="100%"
 					h="100%"
 				>
-					<ContactForm />
+					<Box display="flex" w="100%" p="20px">
+						<ContactForm />
+					</Box>
 				</VStack>
 				<Footer />
 			</VStack>

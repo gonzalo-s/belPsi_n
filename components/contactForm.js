@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { useMediaQuery } from 'react-responsive'
 import Loading from '../components/Loading'
 import axios from 'axios'
-
 import {
 	Input,
 	Text,
@@ -12,16 +10,22 @@ import {
 	Box,
 	VStack,
 	HStack,
+	useColorModeValue,
 } from '@chakra-ui/react'
+import { customColors } from '../themes/customColors'
 
 function ContactForm() {
 	const { register, handleSubmit, errors } = useForm()
 	const [isLoading, setIsLoading] = useState(false)
-	//TODO: check ctrl+f5 sets style to mobile allways
 
-	let isDesktop = useMediaQuery({
-		query: '(min-width: 920px)',
-	})
+	const bg = useColorModeValue(
+		customColors.bg.form.light,
+		customColors.bg.form.dark
+	)
+	const borderColor = useColorModeValue(
+		customColors.border.color.light,
+		customColors.border.color.dark
+	)
 
 	function onSubmit(data, e) {
 		let newData = { ...data, message: data.consulta }
@@ -70,16 +74,17 @@ function ContactForm() {
 	}
 
 	return (
-		<Box display="flex" justifyContent="center">
+		<Box display="flex" justifyContent="center" w="100%">
 			<div>{isLoading ? <Loading /> : ''}</div>
 			<Box
 				m="5px"
 				display="flex"
-				minH="50vh"
-				minW="50vw"
+				w="100%"
 				justifyContent="center"
 				border="1px"
 				borderRadius="0.5rem"
+				bg={bg}
+				borderColor={borderColor}
 			>
 				<VStack
 					display="flex"
@@ -97,7 +102,9 @@ function ContactForm() {
 						<Input
 							type="text"
 							name="name"
+							position="static"
 							placeholder="Nombre"
+							borderColor={borderColor}
 							ref={register({
 								required: {
 									value: true,
@@ -120,6 +127,8 @@ function ContactForm() {
 						<Input
 							name="replyTo"
 							placeholder="Email"
+							position="static"
+							borderColor={borderColor}
 							ref={register({
 								required: {
 									value: true,
@@ -143,6 +152,8 @@ function ContactForm() {
 							type="tel"
 							name="phone"
 							placeholder="011 2222 3333"
+							position="static"
+							borderColor={borderColor}
 							ref={register({
 								pattern: {
 									value: /^[0-9]{5,}$/,
@@ -161,6 +172,8 @@ function ContactForm() {
 
 						<Textarea
 							name="consulta"
+							position="static"
+							borderColor={borderColor}
 							ref={register({
 								required: {
 									value: true,
@@ -171,6 +184,7 @@ function ContactForm() {
 									message: 'Ingresar al menos 10 caracteres',
 								},
 							})}
+							h="30px"
 						></Textarea>
 					</VStack>
 					<Box
@@ -182,7 +196,12 @@ function ContactForm() {
 						pl="1rem"
 						pr="1rem"
 					>
-						<Button w="100%" onClick={handleSubmit(onSubmit)}>
+						<Button
+							position="static"
+							w="100%"
+							colorScheme="purple"
+							onClick={handleSubmit(onSubmit)}
+						>
 							Enviar
 						</Button>
 					</Box>

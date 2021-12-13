@@ -1,20 +1,22 @@
 import Head from 'next/head'
+import React from 'react'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
-// import {
-// 	Container,
-// 	PageContainer,
-// 	PageContentWrap,
-// 	Main,
-// 	QuoteWithImg,
-// 	QuoteImg,
-// 	QuoteP,
-// 	QuoteWrapper,
-// } from '../components/ui/uiKit'
-import { VStack, Image, Wrap, WrapItem, Text } from '@chakra-ui/react'
+import {
+	VStack,
+	Image,
+	Wrap,
+	WrapItem,
+	Text,
+	useColorModeValue,
+} from '@chakra-ui/react'
+import { customColors } from '../themes/customColors'
+
 export default function Home() {
+	const bg = useColorModeValue(customColors.lightBg, customColors.darkBg)
+
 	return (
-		<VStack background="red">
+		<VStack bg={bg}>
 			<Head>
 				<title>LIC MBS</title>
 				<link rel="icon" href="/32px-Psi2.svg.png" />
@@ -23,8 +25,7 @@ export default function Home() {
 				pt="1vh"
 				pb="1vh"
 				className="fullWrapper"
-				background="green"
-				w="70%"
+				w={['100%', '100%', '90%', '80%', '70%']}
 				minH="100vh"
 				h="100%"
 				justifyContent="space-between"
@@ -34,7 +35,7 @@ export default function Home() {
 					border="2px"
 					justify="space-around"
 					align="center"
-					w="50vw"
+					w={['95%', '90%', '90%', '80%', '70%']}
 					p="15px"
 				>
 					<WrapItem>

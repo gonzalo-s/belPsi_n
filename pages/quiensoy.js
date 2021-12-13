@@ -1,13 +1,7 @@
+import React from 'react'
 import Head from 'next/head'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
-import {
-	Container,
-	PageContainer,
-	PageContentWrap,
-	Main,
-} from '../components/ui/uiKit'
-import { Title, H4, Ul, ContentWrapper, ImgWrapp } from '../components/ui/uiKit'
 import {
 	Box,
 	VStack,
@@ -15,13 +9,16 @@ import {
 	Heading,
 	Text,
 	UnorderedList,
-	listItem,
-	Image,
+	useColorModeValue,
 } from '@chakra-ui/react'
+import { customColors } from '../themes/customColors'
+
+//{['mobile', 'mobile', 'mobile', 'mobile', 'desktop']}
 
 export default function About() {
+	const bg = useColorModeValue(customColors.lightBg, customColors.darkBg)
 	return (
-		<VStack background="red">
+		<VStack bg={bg}>
 			<Head>
 				<title>LIC MBS</title>
 				<link rel="icon" href="/32px-Psi2.svg.png" />
@@ -30,8 +27,7 @@ export default function About() {
 				pt="1vh"
 				pb="1vh"
 				className="fullWrapper"
-				background="green"
-				w="70%"
+				w={['100%', '100%', '90%', '80%', '70%']}
 				minH="100vh"
 				h="100%"
 				justifyContent="space-between"
@@ -40,14 +36,13 @@ export default function About() {
 				<VStack
 					className="mainWrapper"
 					justifyContent="space-between"
-					backgroundColor="violet"
 					w="100%"
 				>
 					<Box
 						display="flex"
 						justifyContent="start"
-						w="70%"
 						pt="2rem"
+						w="70%"
 					>
 						<Heading as="h1" size="lg" letterSpacing="0.2rem">
 							Quien Soy
@@ -59,8 +54,7 @@ export default function About() {
 							className="TextWrapper"
 							display="flex"
 							flexDirection="column"
-							border="1px"
-							w="50%"
+							w={['95%', '80%', '70%', '60%', '50%']}
 						>
 							<Box display="flex" flexDir="row" p="2em">
 								<Text>
@@ -73,11 +67,6 @@ export default function About() {
 									y privado; atendiendo niños, adolescentes y
 									adultos.
 								</Text>
-								<Image
-									boxSize="5rem"
-									src={'psySil.png'}
-									alt="psy silhouette"
-								/>
 							</Box>
 							<Heading as="h4" size="md" letterSpacing="0.2rem">
 								FORMACION

@@ -1,38 +1,83 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import LinksDb from './LinksDb'
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
-import { Box, Stack, Text, Link, Fade } from '@chakra-ui/react'
-//import { useDisclosure } from '@chakra-ui/react'
-import { useBoolean, useBreakpointValue } from '@chakra-ui/react'
+import { HamburgerIcon, CloseIcon, SunIcon, MoonIcon } from '@chakra-ui/icons'
+import {
+	Box,
+	Button,
+	useColorModeValue,
+	useColorMode,
+	useOutsideClick,
+	useBreakpointValue,
+	Stack,
+	Text,
+	Link,
+	Fade,
+} from '@chakra-ui/react'
+import { customColors } from '../themes/customColors'
+
+//{['mobile', 'mobile', 'mobile', 'mobile', 'desktop']}
 
 function Navbar() {
 	const [menuState, setMenuState] = useState(false)
+	const [variantState, setVariantState] = useState('xl')
+	const { colorMode, toggleColorMode } = useColorMode()
+	const bg = useColorModeValue(customColors.lightBg, customColors.darkBg)
+	const selected = useColorModeValue(
+		customColors.color.links.selected.light,
+		customColors.color.links.selected.dark
+	)
+	const hover = useColorModeValue(
+		customColors.color.links.hover.light,
+		customColors.color.links.hover.dark
+	)
+	const specialColor = useColorModeValue(
+		customColors.color.specialLightColor,
+		customColors.color.specialDarkColor
+	)
+	const mobileBg = useColorModeValue(
+		customColors.bg.mobile.light,
+		customColors.bg.mobile.dark
+	)
+
+	const ref = React.useRef()
+	useOutsideClick({
+		ref: ref,
+		handler: () => setMenuState(false),
+	})
 
 	let variant = useBreakpointValue({
 		xl: 'xl',
 	})
+	if (variantState != variant) {
+		setVariantState(variant)
+		console.log('dif')
+		if (variant != 'xl') {
+			setMenuState(false)
+		}
+	}
 
 	if (!menuState && variant === 'xl') {
 		return setMenuState(true)
 	}
 	function handleToggleMenu() {
-		setMenuState(!menuState)
+		if (menuState) {
+			setMenuState(!menuState)
+		} else {
+			setMenuState(!menuState)
+		}
 	}
-	console.log(menuState)
-	console.log(variant)
 
 	const router = useRouter()
 
-	const dirColumnMobile = ['column', 'column', 'column', 'column', 'row']
 	//{['mobile', 'mobile', 'mobile', 'mobile', 'desktop']}
 	return (
 		<Stack
 			className="navbarWrapper"
 			w="100%"
 			h="3rem"
-			direction={dirColumnMobile}
+			direction={['column', 'column', 'column', 'column', 'row']}
 			alignItems={[
 				'flex-end',
 				'flex-end',
@@ -40,15 +85,18 @@ function Navbar() {
 				'flex-end',
 				'flex-start',
 			]}
-			backgroundColor="violet"
 		>
 			<Box
+				ref={ref}
 				className="mobileWrapper"
-				position={['fixed', 'fixed', 'fixed', 'fixed', 'static']}
+				borderBottom="1px"
+				borderColor="purple.100"
+				bg={[mobileBg, mobileBg, bg, bg, bg]}
 				display="flex"
-				w={['70%', '70%', '70%', '70%', '100%']}
+				position={['fixed', 'fixed', 'fixed', 'fixed', 'static']}
+				top="0"
+				w={['100%', '100%', '90%', '80%', '100%']}
 				h="3rem"
-				backgroundColor="orange"
 				justifyContent={[
 					'flex-end',
 					'flex-end',
@@ -56,45 +104,24 @@ function Navbar() {
 					'flex-end',
 					'space-between',
 				]}
+				alignItems={['center', 'center', 'center', 'center', 'stretch']}
 			>
 				<Box
-					className="hamMenu"
-					as="button"
-					onClick={handleToggleMenu}
-					cursor="pointer"
-					p="0.5rem"
-					display={['flex', 'flex', 'flex', 'flex', 'none']}
-					position={['fixed', 'fixed', 'fixed', 'fixed', 'static']}
-				>
-					<Fade in={!menuState} unmountOnExit="true">
-						<HamburgerIcon
-							boxSize="30px"
-							position="fixed"
-							right="16%"
-						/>
-					</Fade>
-					<Fade in={menuState} unmountOnExit="true">
-						<CloseIcon
-							boxSize="30px"
-							p="5px"
-							position="fixed"
-							right="16%"
-						/>
-					</Fade>
-				</Box>
-				<Box
 					className="licMbsWrapper"
-					display={['none', 'none', 'none', 'none', 'flex']}
+					display="flex"
 					w="30%"
 					h="100%"
-					justifyContent="end"
+					justifyContent="center"
+					alignItems="center"
 				>
 					<Box
 						display="flex"
-						w="50%"
+						w="20em"
 						direction="row"
 						justifyContent="center"
-						pt="13px"
+						//pt="13px"
+						alignContent="center"
+						//h="100%"
 					>
 						<NextLink href={LinksDb.menu[0].link} passHref>
 							<Link
@@ -105,37 +132,84 @@ function Navbar() {
 									boxShadow: 'none',
 								}}
 								fontSize="md"
-								color="#3C403D"
+								color={specialColor}
 								letterSpacing="0.3rem"
 							>
-								<Text>LIC MBS</Text>
+								<Text fontSize="xl">LIC MBS</Text>
 							</Link>
 						</NextLink>
 					</Box>
+				</Box>
+				<Box
+					className="hamMenu"
+					as="button"
+					onClick={handleToggleMenu}
+					cursor="pointer"
+					display={['flex', 'flex', 'flex', 'flex', 'none']}
+					position={[
+						'relative',
+						'relative',
+						'relative',
+						'relative',
+						'static',
+					]}
+					top="0"
+					right="5px"
+					boxSize="40px"
+				>
+					{menuState ? (
+						<CloseIcon
+							boxSize="30px"
+							p="5px"
+							position="absolute"
+							top="5px"
+							left="5px"
+						/>
+					) : (
+						<HamburgerIcon
+							boxSize="30px"
+							position="absolute"
+							top="5px"
+							left="5px"
+						/>
+					)}
 				</Box>
 
 				<Fade in={menuState} unmountOnExit="true" offsetY="-50px">
 					<Stack
 						className="menuWrapper"
-						direction={dirColumnMobile}
+						bg={[mobileBg, mobileBg, bg, bg, bg]}
+						direction={[
+							'column',
+							'column',
+							'column',
+							'column',
+							'row',
+						]}
+						alignItems={[
+							'start',
+							'start',
+							'start',
+							'start',
+							'center',
+						]}
 						w={['15rem', '15rem', '15rem', '15rem', '2xl']}
 						justify="space-around"
-						h={['15rem', '15rem', '15rem', '15rem', '100%']}
-						pt="13px"
+						h={['25rem', '25rem', '25rem', '25rem', '100%']}
 						top={['3rem', '3rem', '3rem', '3rem', 'none']}
-						right="15%"
-						backgroundColor="yellow"
+						right="0"
 						position={[
-							'fixed',
-							'fixed',
-							'fixed',
-							'fixed',
+							'absolute',
+							'absolute',
+							'absolute',
+							'absolute',
 							'static',
 						]}
+						pb={['2rem', '2rem', '2rem', '2rem', '0']}
 					>
 						{LinksDb.menu.map((item, i) => {
 							return (
-								<Box display="flex" key={i}>
+								<Box display="flex" key={i} alignItems="center">
 									<NextLink href={item.link} passHref>
 										<Link
 											pl="1rem"
@@ -143,12 +217,17 @@ function Navbar() {
 											w="100%"
 											color={
 												router.asPath === item.link
-													? 'pink.100'
+													? selected
+													: ''
+											}
+											fontWeight={
+												router.asPath === item.link
+													? 'bold'
 													: ''
 											}
 											_hover={{
 												boxShadow: 'none',
-												color: 'pink.100',
+												color: hover,
 											}}
 											_focus={{
 												boxShadow: 'none',
@@ -160,6 +239,26 @@ function Navbar() {
 								</Box>
 							)
 						})}
+						<Button
+							size="sm"
+							variant="ghost"
+							position={[
+								'absolute',
+								'absolute',
+								'absolute',
+								'absolute',
+								'static',
+							]}
+							right="0%"
+							top="0"
+							onClick={toggleColorMode}
+							colorScheme="purple"
+							_focus={{
+								boxShadow: 'none',
+							}}
+						>
+							{colorMode === 'light' ? <SunIcon /> : <MoonIcon />}
+						</Button>
 					</Stack>
 				</Fade>
 			</Box>

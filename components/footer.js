@@ -2,22 +2,46 @@ import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import LinksDb from './LinksDb'
 import ChatContact from '../components/chatContact'
-import { Box, Stack, VStack, Text, Link } from '@chakra-ui/react'
+import {
+	Box,
+	useColorModeValue,
+	Stack,
+	VStack,
+	Text,
+	Link,
+} from '@chakra-ui/react'
+import { customColors } from '../themes/customColors'
+
+//{['mobile', 'mobile', 'mobile', 'mobile', 'desktop']}
 
 function Footer() {
 	const router = useRouter()
-
+	const bg = useColorModeValue(customColors.lightBg, customColors.darkBg)
+	const selected = useColorModeValue(
+		customColors.color.links.selected.light,
+		customColors.color.links.selected.dark
+	)
+	const hover = useColorModeValue(
+		customColors.color.links.hover.light,
+		customColors.color.links.hover.dark
+	)
 	return (
-		<VStack w="60%">
+		<VStack w="60%" borderTop="1px" borderColor="purple.100" bg={bg}>
 			<ChatContact />
 			<Stack
 				direction="row"
 				wrap="wrap"
 				className="top"
 				w="100%"
-				justifyContent="space-around"
+				justifyContent={[
+					'center',
+					'center',
+					'space-around',
+					'space-around',
+					'space-around',
+				]}
 			>
-				<VStack alignItems="flex-start">
+				<VStack alignItems="flex-start" pl="3rem" pb="1rem">
 					{LinksDb.menu.map((item, i) => {
 						return (
 							<Box display="flex" key={i}>
@@ -27,12 +51,17 @@ function Footer() {
 										pr="1rem"
 										color={
 											router.asPath === item.link
-												? 'pink.100'
+												? selected
+												: ''
+										}
+										fontWeight={
+											router.asPath === item.link
+												? 'bold'
 												: ''
 										}
 										_hover={{
 											boxShadow: 'none',
-											color: 'pink.100',
+											color: hover,
 										}}
 										_focus={{
 											boxShadow: 'none',
@@ -45,17 +74,20 @@ function Footer() {
 						)
 					})}
 				</VStack>
-				<VStack alignItems="flex-start">
+				<VStack
+					alignItems="flex-start"
+					display={['none', 'none', 'flex', 'flex', 'flex']}
+				>
 					{LinksDb.footerExtra.map((item, i) => {
 						return (
-							<Box display="flex" key={i}>
+							<Box key={i}>
 								<NextLink href={item.link} passHref>
 									<Link
 										pl="1rem"
 										pr="1rem"
 										_hover={{
 											boxShadow: 'none',
-											color: 'pink.100',
+											color: hover,
 										}}
 										_focus={{
 											boxShadow: 'none',
@@ -69,7 +101,9 @@ function Footer() {
 					})}
 				</VStack>
 			</Stack>
-			<Box className="bottom">Copyright</Box>
+			<Box pt="0.5rem" fontWeight="100" className="bottom">
+				Copyright
+			</Box>
 		</VStack>
 	)
 }

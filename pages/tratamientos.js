@@ -1,28 +1,22 @@
 import Head from 'next/head'
+import React from 'react'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
-import {
-	Container,
-	PageContainer,
-	PageContentWrap,
-	Main,
-} from '../components/ui/uiKit'
-import { Title, H4, Ul, ContentWrapper, ImgWrapp } from '../components/ui/uiKit'
 import TratamientosData from '../components/TxtDb'
 import {
 	VStack,
 	Box,
-	Image,
-	Wrap,
-	WrapItem,
 	Text,
 	Heading,
 	UnorderedList,
+	useColorModeValue,
 } from '@chakra-ui/react'
+import { customColors } from '../themes/customColors'
 
 export default function Services() {
+	const bg = useColorModeValue(customColors.lightBg, customColors.darkBg)
 	return (
-		<VStack background="red">
+		<VStack bg={bg}>
 			<Head>
 				<title>LIC MBS</title>
 				<link rel="icon" href="/32px-Psi2.svg.png" />
@@ -31,8 +25,7 @@ export default function Services() {
 				pt="1vh"
 				pb="1vh"
 				className="fullWrapper"
-				background="green"
-				w="70%"
+				w={['100%', '100%', '90%', '80%', '70%']}
 				minH="100vh"
 				h="100%"
 				justifyContent="space-between"
@@ -41,10 +34,7 @@ export default function Services() {
 
 				<VStack
 					className="mainWrapper"
-					className="mainWrapper"
 					justifyContent="space-between"
-					backgroundColor="violet"
-					border="1px"
 					w="100%"
 				>
 					<Box
@@ -59,11 +49,10 @@ export default function Services() {
 					</Box>
 
 					<Box
-						className="contentWapper"
+						className="TextWrapper"
 						display="flex"
 						flexDirection="column"
-						border="1px"
-						w="50%"
+						w={['95%', '80%', '70%', '60%', '50%']}
 					>
 						<Text p="2rem">
 							Tratamientos orientados a niños, adolescentes y
